@@ -18,7 +18,7 @@
       </div> -->
     </div>
 
-    <h1 class="mx-2 sm:mx-5 md:mx-24 mt-10 uppercase text-gray-700 text-xl lg:text-3xl font-extrabold text-center"
+    <h1 class="mx-2 sm:mx-5 md:mx-24 mt-0 uppercase text-gray-700 text-xl lg:text-3xl font-extrabold text-center"
       style="font-family: 'Dancing Script', cursive, sans-serif;">
       Shop By Category
     </h1>
@@ -39,7 +39,7 @@
         style="width: fit-content; animation: carouselAnim 10s infinite alternate linear;">
 
         <div v-for="item in 12" :key="item"
-          class="carousel-focus flex items-center flex-col relative bg-white mx-5 my-10 p-2 border border-red-600 rounded-lg shadow-lg w-[200px]">
+          class="carousel-focus flex items-center flex-col relative bg-white mx-1 my-10 p-2 border border-red-600 rounded-lg shadow-lg w-[200px]">
           <img class="rounded-xl"
             src="https://nkrmart.com/public/storage/images/subCategory/0RHRsQEQ4hHcFs8yU1bds6UwWdrOGm6Z5CbAADc0.jpg"
             alt="Img">
@@ -68,7 +68,7 @@
               </a>
               <div class="px-2 pb-2 w-full">
                 <a href="#">
-                  <h5 class="font-semibold tracking-tight text-sm text-gray-900 truncate">
+                  <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
                     Apple Watch Series 7 GPS
                   </h5>
                 </a>
@@ -80,7 +80,7 @@
 
                 <div class="flex w-full items-center justify-between">
                   <a href="#"
-                    class="text-slate-900 w-full bg-orange-200 hover:bg-orange-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-sm px-5 py-1.5 text-center ">
+                    class="text-slate-900 w-full md:text-sm bg-orange-200 hover:bg-orange-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-[11px] px-5 py-1.5 text-center ">
                     Add to cart
                   </a>
                 </div>
@@ -145,7 +145,7 @@
 
   <WelcomeItem>
     <div class="mx-2 sm:mx-5 md:mx-24 ">
-      <div class="flex justify-between py-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 justify-between py-16">
         <div class="text-center">
           <div class="service_container">
             <div class="">
@@ -157,9 +157,9 @@
               <h4>
                 High-quality Goods
               </h4>
-              <p>
+              <small>
                 Enjoy top quality items for less
-              </p>
+              </small>
             </div>
           </div>
         </div>
@@ -173,9 +173,9 @@
             <h4>
               24/7 Live Chat
             </h4>
-            <p>
+            <small>
               Get instant assistance whenever you need it
-            </p>
+            </small>
           </div>
         </div>
         <div class="text-center">
@@ -188,9 +188,9 @@
             <h4>
               Express Shipping
             </h4>
-            <p>
+            <small>
               Fast &amp; reliable delivery options
-            </p>
+            </small>
           </div>
         </div>
         <div class="text-center">
@@ -203,9 +203,9 @@
             <h4>
               Secure Payment
             </h4>
-            <p>
+            <small>
               Multiple safe payment methods
-            </p>
+            </small>
           </div>
         </div>
       </div>
@@ -213,24 +213,55 @@
   </WelcomeItem>
 
   <WelcomeItem>
-    <footer class="bg-[#ff0b34] py-8">
+    <footer class="bg-[#ff0b34]">
       <div class="mx-2 sm:mx-5 md:mx-24">
-        <div class=" grid grid-cols-3">
-            <div>
-              
-            </div>
+        <div class=" grid grid-cols-3 gap-8 py-8">
+          <div class="w-full text-white">
+            <img src="https://nkrmart.com/public/storage/images/general_setting/HXnCqk8BOWmVIjZIT4xIkrJeJQf2tcKJw3oLKeDJ.png" alt="">
+            <p>
+              nkrmart.com  is a growing fashion house in Bangladesh. Starting its journey in 2022.
+            </p>
+            <p>
+              Unparalleled standard in design and quality is at the core of our business. Our goal is to lead the fashion industry by bringing quality products at affordable prices.
+
+            </p>
+          </div>
+          <div class="w-full text-white">
+            <img src="https://nkrmart.com/public/storage/images/general_setting/HXnCqk8BOWmVIjZIT4xIkrJeJQf2tcKJw3oLKeDJ.png" alt="">
+            <p>
+              nkrmart.com  is a growing fashion house in Bangladesh. Starting its journey in 2022.
+            </p>
+            <p>
+              Unparalleled standard in design and quality is at the core of our business. Our goal is to lead the fashion industry by bringing quality products at affordable prices.
+
+            </p>
+          </div>
+          <div class="w-full text-white">
+            <img src="https://nkrmart.com/public/storage/images/general_setting/HXnCqk8BOWmVIjZIT4xIkrJeJQf2tcKJw3oLKeDJ.png" alt="">
+            <p>
+              nkrmart.com  is a growing fashion house in Bangladesh. Starting its journey in 2022.
+            </p>
+            <p>
+              Unparalleled standard in design and quality is at the core of our business. Our goal is to lead the fashion industry by bringing quality products at affordable prices.
+
+            </p>
+          </div>
+
+
         </div>
       </div>
 
 
-      <div class="footer_info_row">
-        <div class="end_footer">
-          <p class="f_info_left">
-            Copyright © nkrmart.com 2022 All rights reserved
-          </p>
-          <p class="f_info_right"><a href="https://mohasagorit.solutions" target="_blank"
-              style="color: rgb(255, 255, 255);">Developed by MIT</a></p>
+      <div class="bg-black py-4">
+        <div class="mx-2 sm:mx-5 md:mx-24 flex justify-between text-white">
+          <div>
+            Copyright © alsdkfjaslkf.com 2022 All rights reserved
+          </div>
+          <div class="">
+            <a href="#" target="_blank">Developed by Rifat</a>
+          </div>
         </div>
+
       </div>
     </footer>
   </WelcomeItem>
