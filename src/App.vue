@@ -37,7 +37,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
   <RouterView />
 
-  <footer class="bg-white py-2 md:hidden sticky bottom-0 shadow-[0px_-4px_10px_#a4a4a4]">
+  <footer class="bg-white py-2 z-10 md:hidden sticky bottom-0 shadow-[0px_-4px_10px_#a4a4a4]">
     
     <nav class="mx-2 sm:mx-5 md:mx-24"> 
       <ul class="w-full flex text-black justify-between px-4">

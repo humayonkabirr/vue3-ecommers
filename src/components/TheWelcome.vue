@@ -74,14 +74,18 @@
                 </a>
 
                 <div class="flex items-center justify-between mb-2">
-                  <span class="text-xs text-gray-900">$599</span>
-                  <small class="font-bold text-red-600 line-through">$599</small>
+                  <span class="text-sm text-gray-900">BDT 599</span>
+                  <small class="text-red-600 text-xs line-through">BDT 599</small>
                 </div>
 
-                <div class="flex w-full items-center justify-between">
+                <div class="flex w-full items-center justify-between space-x-2px]">
                   <a href="#"
-                    class="text-slate-900 w-full md:text-sm bg-orange-200 hover:bg-orange-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-[11px] px-5 py-1.5 text-center ">
-                    Add to cart
+                    class="text-slate-900 w-5/6 hover:bg-[#ff0b34] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-2 py-1.5 text-center border border-[#ff0b34] ">
+                    Order Now
+                  </a>
+                  <a href="#"
+                    class="text-slate-900 w-1/6 hover:bg-[#ff0b34] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#ff0b34] ">
+                    <i class="fa-regular fa-heart text-lg hover:font-bold"></i>
                   </a>
                 </div>
 
@@ -120,14 +124,18 @@
                 </a>
 
                 <div class="flex items-center justify-between mb-2">
-                  <span class="text-xs text-gray-900">$599</span>
-                  <small class="font-bold text-red-600 line-through">$599</small>
+                  <span class="text-sm text-gray-900">BDT 599</span>
+                  <small class="text-red-600 text-xs line-through">BDT 599</small>
                 </div>
 
-                <div class="flex w-full items-center justify-between">
+                <div class="flex w-full items-center justify-between space-x-2px]">
                   <a href="#"
-                    class="text-slate-900 w-full md:text-sm bg-orange-200 hover:bg-orange-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-[11px] px-5 py-1.5 text-center ">
-                    Add to cart
+                    class="text-slate-900 w-5/6 hover:bg-[#ff0b34] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-2 py-1.5 text-center border border-[#ff0b34] ">
+                    Order Now
+                  </a>
+                  <a href="#"
+                    class="text-slate-900 w-1/6 hover:bg-[#ff0b34] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#ff0b34] ">
+                    <i class="fa-regular fa-heart text-lg hover:font-bold"></i>
                   </a>
                 </div>
 
@@ -152,7 +160,7 @@
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
 
           <div v-for="index in 30" :key="index">
-            <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
+            <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-lg duration-1000">
               <a href="#" class="">
                 <div class="m-2 overflow-hidden">
                   <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
@@ -168,14 +176,18 @@
                 </a>
 
                 <div class="flex items-center justify-between mb-2">
-                  <span class="text-xs text-gray-900">$599</span>
-                  <small class="font-bold text-red-600 line-through">$599</small>
+                  <span class="text-sm text-gray-900">BDT 599</span>
+                  <small class="text-red-600 text-xs line-through">BDT 599</small>
                 </div>
 
-                <div class="flex w-full items-center justify-between">
+                <div class="flex w-full items-center justify-between space-x-2px]">
                   <a href="#"
-                    class="text-slate-900 w-full bg-orange-200 hover:bg-orange-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-sm px-5 py-1.5 text-center ">
-                    Add to cart
+                    class="text-slate-900 w-5/6 hover:bg-[#ff0b34] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-5 py-1.5 text-center border border-[#ff0b34] ">
+                    Order Now
+                  </a>
+                  <a href="#"
+                    class="text-slate-900 w-1/6 hover:bg-[#ff0b34] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#ff0b34] ">
+                    <i class="fa-regular fa-heart text-lg hover:font-bold"></i>
                   </a>
                 </div>
 
