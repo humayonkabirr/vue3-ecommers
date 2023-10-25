@@ -25,13 +25,11 @@
 
 
 
-
-
     <div class=" mx-auto w-full overflow-hidden relative">
       <div class="w-full h-full absolute">
-        <div class="w-1/4 h-full absolute z-50 left-0"
+        <div class="w-[6%] h-full absolute z-50 left-0"
           style="background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);"></div>
-        <div class="w-1/4 h-full absolute z-50 right-0"
+        <div class="w-[6%] h-full absolute z-50 right-0"
           style="background: linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);"></div>
       </div>
 
@@ -61,10 +59,58 @@
 
           <div class="item" v-for="index in 30" :key="index">
             <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
-              <a href="#">
-                <img class="p-2 rounded-t-lg"
+              <a href="#"> 
+                  <div class="m-2 overflow-hidden">
+                  <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
                   src="https://nkrmart.com/public/storage/images/product_thumbnail_img/thumbnail_1697615262_1412.jpg"
                   alt="product image" />
+                </div>
+              </a>
+              <div class="px-2 pb-2 w-full">
+                <a href="#">
+                  <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
+                    Apple Watch Series 7 GPS
+                  </h5>
+                </a>
+
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs text-gray-900">$599</span>
+                  <small class="font-bold text-red-600 line-through">$599</small>
+                </div>
+
+                <div class="flex w-full items-center justify-between">
+                  <a href="#"
+                    class="text-slate-900 w-full md:text-sm bg-orange-200 hover:bg-orange-100 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-md text-[11px] px-5 py-1.5 text-center ">
+                    Add to cart
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <div class="mx-2 sm:mx-5 md:mx-24 ">
+      <h1 class=" font-bold text-2xl">Top Selling Product</h1>
+
+      <div class="owl-slider">
+        <div id="carousel" class="owl-carousel">
+
+          <div class="item" v-for="index in 30" :key="index">
+            <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
+              <a href="#">
+                <div class="m-2 overflow-hidden">
+                  <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
+                  src="https://nkrmart.com/public/storage/images/product_thumbnail_img/169529915412.%20Sky%20+%20Pest.jpg"
+                  alt="product image" />
+                </div>
               </a>
               <div class="px-2 pb-2 w-full">
                 <a href="#">
@@ -107,10 +153,12 @@
 
           <div v-for="index in 30" :key="index">
             <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
-              <a href="#">
-                <img class="p-2 rounded-t-lg"
+              <a href="#" class="">
+                <div class="m-2 overflow-hidden">
+                  <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
                   src="https://nkrmart.com/public/storage/images/product_thumbnail_img/169529915412.%20Sky%20+%20Pest.jpg"
                   alt="product image" />
+                </div>
               </a>
               <div class="px-2 pb-2 w-full">
                 <a href="#">
