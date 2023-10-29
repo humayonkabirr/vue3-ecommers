@@ -58,24 +58,24 @@ getProductsBestseller('products/best-seller');
 
   <WelcomeItem>
     <div v-if="resGeteatured" class="mx-2 sm:mx-5 md:mx-24 ">
-      <h1 class=" font-bold text-2xl">New Arrival Products</h1>
+      <h1 class=" font-bold text-2xl my-2">New Arrival Products</h1>
       <div class="owl-slider">
         <div id="carousel" class="owl-carousel grid grid-cols-5">
 
           <div class="item w-full" v-for="newArrival in 6" :key="newArrival.name">
             <div class="w-full bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
-              <a href="#">
+               <router-link to="details/2">
                 <div class="m-2 overflow-hidden">
                   <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
                     src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg" alt="product image" />
                 </div>
-              </a>
+               </router-link>
               <div class="px-2 pb-2 w-full">
-                <a href="#">
+                 <router-link to="details/2">
                   <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
                     {{ newArrival.name }}
                   </h5>
-                </a>
+                 </router-link>
 
                 <div class="flex items-center justify-between mb-2">
                   <span class="text-sm text-gray-900">BDT 599</span>
@@ -105,26 +105,26 @@ getProductsBestseller('products/best-seller');
   </WelcomeItem>
 
   <WelcomeItem>
-    <div v-if="resBestSelling" class="mx-2 sm:mx-5 md:mx-24 ">
-      <h1 class=" font-bold text-2xl">Top Selling Product</h1>
+    <div v-if="resBestSelling" class="mx-2 sm:mx-5 md:mx-24 mt-8">
+      <h1 class=" font-bold text-2xl my-2">Top Selling Product</h1>
       <div class="owl-slider">
         <div id="carousel" class="owl-carousel">
 
 
           <div v-for="bestSell in 2" :key="bestSell"
             class="bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
-            <a href="#">
+             <router-link to="details/2">
               <div class="m-2 overflow-hidden">
                 <img class="rounded-t-lg hover:rotate-12 hover:scale-125 duration-500" src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg"
                   alt="product image" />
               </div>
-            </a>
+             </router-link>
             <div class="px-2 pb-2">
-              <a href="#">
+              <router-link to="details/2">
                 <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
                   {{ bestSell.name }}
                 </h5>
-              </a>
+              </router-link>
 
               <div class="flex items-center justify-between mb-2">
                 <span class="text-sm text-gray-900">BDT 599</span>
@@ -154,7 +154,7 @@ getProductsBestseller('products/best-seller');
   </WelcomeItem>
 
   <WelcomeItem>
-    <div class="mx-2 sm:mx-5 md:mx-24 ">
+    <div class="mx-2 sm:mx-5 md:mx-24 m-8">
       <h1 class=" font-bold text-2xl">All Products </h1>
 
       <div class="flex justify-center my-4 mt-6">
