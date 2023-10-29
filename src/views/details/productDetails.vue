@@ -1,169 +1,217 @@
 <script setup>
- 
+
 </script>
 <template>
-  <div class="antialiased">
-  
+  <div class="m-2 sm:mx-5 md:mx-24 grid grid-cols-12">
+    <div class="col-span-5 flex space-x-2">
+      <div class="w-1/12 space-y-2">
+        <img class="border border-red-500"
+          src="https://nkrmart.com/public/storage/images/product/product_1698530702_3756.jpg" alt="">
+        <img src="https://nkrmart.com/public/storage/images/product/product_1698530702_3756.jpg" alt="">
+        <img src="https://nkrmart.com/public/storage/images/product/product_1698530702_3756.jpg" alt="">
+      </div>
+      <div class="w-11/12 overflow-hidden">
+        <img class=" hover:scale-150 duration-700"
+          src="https://nkrmart.com/public/storage/images/product/product_1698530702_3756.jpg" alt="">
+      </div>
+    </div>
+    <div class="col-span-4 px-6">
+      <h1 class="text-xl">Premium Quality Formal Solid Shirt</h1>
+      <a href="https://wa.me/+8804641546" class="flex items-center hover:text-red-400">
+        <svg data-v-11f90b60="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18px" height="18px"
+          fill-rule="evenodd" clip-rule="evenodd" class="single_whats_app">
+          <path fill="#fff"
+            d="M4.9,43.3l2.7-9.8C5.9,30.6,5,27.3,5,24C5,13.5,13.5,5,24,5c5.1,0,9.8,2,13.4,5.6	C41,14.2,43,18.9,43,24c0,10.5-8.5,19-19,19c0,0,0,0,0,0h0c-3.2,0-6.3-0.8-9.1-2.3L4.9,43.3z">
+          </path>
+          <path fill="#fff"
+            d="M4.9,43.8c-0.1,0-0.3-0.1-0.4-0.1c-0.1-0.1-0.2-0.3-0.1-0.5L7,33.5c-1.6-2.9-2.5-6.2-2.5-9.6	C4.5,13.2,13.3,4.5,24,4.5c5.2,0,10.1,2,13.8,5.7c3.7,3.7,5.7,8.6,5.7,13.8c0,10.7-8.7,19.5-19.5,19.5c-3.2,0-6.3-0.8-9.1-2.3	L5,43.8C5,43.8,4.9,43.8,4.9,43.8z">
+          </path>
+          <path fill="#cfd8dc"
+            d="M24,5c5.1,0,9.8,2,13.4,5.6C41,14.2,43,18.9,43,24c0,10.5-8.5,19-19,19h0c-3.2,0-6.3-0.8-9.1-2.3	L4.9,43.3l2.7-9.8C5.9,30.6,5,27.3,5,24C5,13.5,13.5,5,24,5 M24,43L24,43L24,43 M24,43L24,43L24,43 M24,4L24,4C13,4,4,13,4,24	c0,3.4,0.8,6.7,2.5,9.6L3.9,43c-0.1,0.3,0,0.7,0.3,1c0.2,0.2,0.4,0.3,0.7,0.3c0.1,0,0.2,0,0.3,0l9.7-2.5c2.8,1.5,6,2.2,9.2,2.2	c11,0,20-9,20-20c0-5.3-2.1-10.4-5.8-14.1C34.4,6.1,29.4,4,24,4L24,4z">
+          </path>
+          <path fill="#40c351"
+            d="M35.2,12.8c-3-3-6.9-4.6-11.2-4.6C15.3,8.2,8.2,15.3,8.2,24c0,3,0.8,5.9,2.4,8.4L11,33l-1.6,5.8	l6-1.6l0.6,0.3c2.4,1.4,5.2,2.2,8,2.2h0c8.7,0,15.8-7.1,15.8-15.8C39.8,19.8,38.2,15.8,35.2,12.8z">
+          </path>
+          <path fill="#fff" fill-rule="evenodd"
+            d="M19.3,16c-0.4-0.8-0.7-0.8-1.1-0.8c-0.3,0-0.6,0-0.9,0	s-0.8,0.1-1.3,0.6c-0.4,0.5-1.7,1.6-1.7,4s1.7,4.6,1.9,4.9s3.3,5.3,8.1,7.2c4,1.6,4.8,1.3,5.7,1.2c0.9-0.1,2.8-1.1,3.2-2.3	c0.4-1.1,0.4-2.1,0.3-2.3c-0.1-0.2-0.4-0.3-0.9-0.6s-2.8-1.4-3.2-1.5c-0.4-0.2-0.8-0.2-1.1,0.2c-0.3,0.5-1.2,1.5-1.5,1.9	c-0.3,0.3-0.6,0.4-1,0.1c-0.5-0.2-2-0.7-3.8-2.4c-1.4-1.3-2.4-2.8-2.6-3.3c-0.3-0.5,0-0.7,0.2-1c0.2-0.2,0.5-0.6,0.7-0.8	c0.2-0.3,0.3-0.5,0.5-0.8c0.2-0.3,0.1-0.6,0-0.8C20.6,19.3,19.7,17,19.3,16z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <small>Ask for details</small>
+      </a>
 
-  <div class="bg-indigo-700 text-indigo-200 md:text-center py-2 px-4">
-    Inspired from Dribbble Shot by <a href="https://dribbble.com/shots/14127375-Product-Page" class="font-bold underline hover:text-indigo-100">Vishnu Prasad</a>.
-    See his works on <a href="https://dribbble.com/vlockn" class="font-bold underline hover:text-indigo-100">Dribbble</a>.
-  </div>
-  
-  <div class="bg-white shadow-sm sticky top-0">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 md:py-4">
-      <div class="flex items-center justify-between md:justify-start">
-        <!-- Menu Trigger -->
-        <button type="button" class="md:hidden w-10 h-10 rounded-lg -ml-2 flex justify-center items-center">
-          <svg class="text-gray-500 w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-        <!-- ./ Menu Trigger -->
-  
-        <a href="#" class="font-bold text-gray-700 text-2xl">Shop.</a>
-  
-        <div class="hidden md:flex space-x-3 flex-1 lg:ml-8">
-          <a href="#" class="px-2 py-2 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-gray-600">Electronics</a>
-          <a href="#" class="px-2 py-2 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-gray-600">Fashion</a>
-          <a href="#" class="px-2 py-2 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-gray-600">Tools</a>
-          <a href="#" class="px-2 py-2 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-gray-600">Books</a>
-          <a href="#" class="px-2 py-2 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-gray-600">More</a>
-        </div>
-  
-        <div class="flex items-center space-x-4">
-          <div class="relative hidden md:block">
-            <input type="search" class="pl-10 pr-2 h-10 py-1 rounded-lg border border-gray-200 focus:border-gray-300 focus:outline-none focus:shadow-inner leading-none" placeholder="Search">
-            <svg class="h-6 w-6 text-gray-300 ml-2 mt-2 stroke-current absolute top-0 left-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
-  
-          <a href="#" class="flex h-10 items-center px-2 rounded-lg border border-gray-200 hover:border-gray-300 focus:outline-none hover:shadow-inner">
-            <svg class="h-6 w-6 leading-none text-gray-300 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-            </svg>
-            <span class="pl-1 text-gray-500 text-md">0</span>
-          </a>
-  
-          <button type="button" class="hidden md:block w-10 h-10 rounded-lg bg-gray-100 border border-gray-200 flex justify-center items-center">
-            <img src="https://avatars.dicebear.com/api/bottts/2.svg" alt="bottts" width="28" height="28" class="rounded-lg mx-auto">
+      <div class="mt-4 space-x-2">
+        Price: <strong>152</strong> <small class="text-red-400 line-through">1523</small>
+      </div>
+
+      <div class="my-4">
+        <span class="border-2 px-2 py-1">
+          Shipping Within 2-5 Days with 100% COD
+        </span>
+      </div>
+
+      <div class="mt-8">
+        <h1 class="text-lg">Select Size</h1>
+        <div class="flex flex-wrap -mb-2">
+          <button class="py-1 mb-2 mr-1 border w-11 border-[#ff0b34] hover:text-white hover:bg-[#ff0b34]">XL
+          </button>
+          <button class="py-1 mb-2 mr-1 border w-11 border-[#ff0b34] hover:text-white hover:bg-[#ff0b34]">S
+          </button>
+          <button class="py-1 mb-2 mr-1 border w-11 border-[#ff0b34] hover:text-white hover:bg-[#ff0b34]">M
+          </button>
+          <button class="py-1 mb-2 mr-1 border w-11 border-[#ff0b34] hover:text-white hover:bg-[#ff0b34]">XS
           </button>
         </div>
       </div>
-  
-      <!-- Search Mobile -->
-      <div class="relative md:hidden">
-        <input type="search" class="mt-1 w-full pl-10 pr-2 h-10 py-1 rounded-lg border border-gray-200 focus:border-gray-300 focus:outline-none focus:shadow-inner leading-none" placeholder="Search">
-  
-        <svg class="h-6 w-6 text-gray-300 ml-2 mt-3 stroke-current absolute top-0 left-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </div>
-      <!-- ./ Search Mobile -->
-  
-    </div>
-  </div>
-  
-  <div class="py-6">
-    <!-- Breadcrumbs -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center space-x-2 text-gray-400 text-sm">
-        <a href="#" class="hover:underline hover:text-gray-600">Home</a>
-        <span>
-          <svg class="h-5 w-5 leading-none text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </span>
-        <a href="#" class="hover:underline hover:text-gray-600">Electronics</a>
-        <span>
-          <svg class="h-5 w-5 leading-none text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </span>
-        <span>Headphones</span>
-      </div>
-    </div>
-    <!-- ./ Breadcrumbs -->
-  
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-      <div class="flex flex-col md:flex-row -mx-4">
-        <div class="md:flex-1 px-4">
-          <div x-data="{ image: 1 }" x-cloak>
-            <div class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4">
-              <div x-show="image === 1" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
-                <span class="text-5xl">1</span>
-              </div>
-  
-              <div x-show="image === 2" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
-                <span class="text-5xl">2</span>
-              </div>
-  
-              <div x-show="image === 3" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
-                <span class="text-5xl">3</span>
-              </div>
-  
-              <div x-show="image === 4" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
-                <span class="text-5xl">4</span>
-              </div>
-            </div>
-  
-            <div class="flex -mx-2 mb-4">
-              <template x-for="i in 4">
-                <div class="flex-1 px-2">
-                  <button x-on:click="image = i" :class="{ 'ring-2 ring-indigo-300 ring-inset': image === i }" class="focus:outline-none w-full rounded-lg h-24 md:h-32 bg-gray-100 flex items-center justify-center">
-                    <span x-text="i" class="text-2xl"></span>
-                  </button>
-                </div>
-              </template>
-            </div>
-          </div>
+
+      <div class="mt-8">
+        <h1 class="text-lg">Select Color</h1>
+        <div class="flex space-x-3">
+          <button
+            class="p-1 mb-2 border border-transparent rounded-full hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400 ">
+            <div class="w-6 h-6 bg-red-600 rounded-full"></div>
+          </button>
+          <button
+            class="p-1 mb-2 border border-transparent rounded-full hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400">
+            <div class="w-6 h-6 bg-green-600 rounded-full"></div>
+          </button>
+          <button
+            class="p-1 mb-2 border border-transparent rounded-full hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400">
+            <div class="w-6 h-6 bg-yellow-500 rounded-full"></div>
+          </button>
+          <button
+            class="p-1 mb-2 border border-transparent rounded-full hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400">
+            <div class="w-6 h-6 rounded-full bg-sky-400"></div>
+          </button>
         </div>
-        <div class="md:flex-1 px-4">
-          <h2 class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">Lorem ipsum dolor, sit amet consectetur, adipisicing elit.</h2>
-          <p class="text-gray-500 text-sm">By <a href="#" class="text-indigo-600 hover:underline">ABC Company</a></p>
-  
-          <div class="flex items-center space-x-4 my-4">
-            <div>
-              <div class="rounded-lg bg-gray-100 flex py-2 px-3">
-                <span class="text-indigo-400 mr-1 mt-1">$</span>
-                <span class="font-bold text-indigo-600 text-3xl">25</span>
+      </div>
+
+      <div class="mt-8">
+        <div class="flex flex-wrap items-center justify-between">
+          <div class="mb-4 mr-4 lg:mb-0">
+            <div class="w-28">
+              <div class="relative flex flex-row w-full h-10 bg-transparent border border-[#ff0b34]">
+                <button
+                  class="w-20 h-full text-gray-600 bg-gray-100 border-r  outline-none cursor-pointer hover:text-gray-200 duration-1000 hover:bg-[#ff0b34]">
+                  <span class="m-auto text-2xl font-thin">-</span>
+                </button>
+                <input type="number"
+                  class="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-100 outline-none dark:text-gray-400 dark:placeholder-gray-400 focus:outline-none text-md hover:text-black"
+                  placeholder="1">
+                <button
+                  class="w-20 h-full text-gray-600 bg-gray-100 border-l outline-none cursor-pointer hover:text-gray-200 duration-1000 hover:bg-[#ff0b34]">
+                  <span class="m-auto text-2xl font-thin">+</span>
+                </button>
               </div>
             </div>
-            <div class="flex-1">
-              <p class="text-green-500 text-xl font-semibold">Save 12%</p>
-              <p class="text-gray-400 text-sm">Inclusive of all Taxes.</p>
-            </div>
           </div>
-  
-          <p class="text-gray-500">Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Vitae exercitationem porro saepe ea harum corrupti vero id laudantium enim, libero blanditiis expedita cupiditate a est.</p>
-  
-          <div class="flex py-4 space-x-4">
-            <div class="relative">
-              <div class="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">Qty</div>
-              <select class="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-  
-              <svg class="w-5 h-5 text-gray-400 absolute right-0 bottom-0 mb-2 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+          
+          <div class="flex">
+            <div class="mb-4 mr-4 lg:mb-0">
+            <button
+              class="flex items-center justify-center w-full h-10 p-2 text-gray-700 border border-[#ff0b34] duration-700 hover:bg-[#ff0b34] hover:text-white lg:w-11">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                viewBox="0 0 16 16">
+                <path
+                  d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+                </path>
               </svg>
-            </div>
-  
-            <button type="button" class="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white">
-              Add to Cart
             </button>
           </div>
+          <div class="mb-4 lg:mb-0">
+            <button
+              class="flex items-center justify-center w-full h-10 p-2 text-gray-700 border border-[#ff0b34] duration-700 hover:bg-[#ff0b34] hover:text-white lg:w-11">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class=" bi bi-heart"
+                viewBox="0 0 16 16">
+                <path
+                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
+                </path>
+              </svg>
+            </button>
+          </div> 
+          </div>
         </div>
+        <div class="mt-4 lg:mb-0">
+            <button
+              class="w-full h-10 px-5 mr-4 text-gray-400 border border-[#ff0b34] duration-700 hover:bg-[#ff0b34] hover:text-white">
+              Buy Now
+            </button>
+          </div>
+      </div>
+
+    </div>
+    <div class="col-span-3">
+      <div class="px-5 py-3 border-2 border-dotted border-red-500 leading-8 text-gray-700 text-xs">
+        <p> <i class="fa fa-check"></i> Order today and receive it within 02 - 03 days </p>
+        <p> <i class="fa fa-check"></i> Quality Product </p>
+        <p> <i class="fa fa-check"></i> Cash In Delivery Available </p>
+      </div>
+
+      <div class="px-5 py-3 mt-5 border-2 border-dotted border-red-500 leading-8 text-gray-700 text-xs">
+        <p> <i class="fa fa-check"></i> Have question about this product ? please call </p>
+        <p> <i class="fa fa-phone"></i>01700000000</p>
       </div>
     </div>
   </div>
+
+  <div class="m-2 sm:mx-5 md:mx-24 mt-2 py-2 bg-gray-200 border border-[#ff0b34]">
+    <strong class="px-4 py-3 bg-[#ff0b34] text-white">Description</strong>
+    <strong class="px-4 py-3 hover:bg-[#ff0b34] hover:text-white duration-1000">How to order</strong>
+    <strong class="px-4 py-3 hover:bg-[#ff0b34] hover:text-white duration-1000">Return Policy</strong>
+  </div>
+
+  <div class="m-2 sm:mx-5 md:mx-24 mt-8 ">
+    <p>Premium Quality Solid Shirt</p>
+    <p>Fabrics: Oxford Cotton</p>
+    <p>Size: M, L, XL</p>
+    <p>M= Length-28″ Chest- 38″</p>
+    <p>L= Length-29″ Chest- 40″</p>
+    <p>XL= Length-30″ Chest- 42″</p>
+    <p>Fashionable & Comfortable</p>
+    <p>Guaranteed Fabrics</p>
+  </div>
+
+  <div class="mx-2 sm:mx-5 md:mx-24 my-6">
+      <h1 class=" font-bold text-2xl my-2">Related Products</h1> 
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+
+          <div v-for="item2 in 42" :key="item2">
+            <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-lg duration-1000">
+              <a href="#" class="">
+                <div class="m-2 overflow-hidden h-[200px]">
+                  <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
+                  :src="item2.thumbnail_image"
+                  alt="product image" />
+                </div>
+              </a>
+              <div class="px-2 pb-2 w-full">
+                <a href="#">
+                  <h5 class="font-semibold tracking-tight text-sm text-gray-900 truncate">
+                    {{ item2.name }}
+                  </h5>
+                </a>
+
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-gray-900">{{ item2.main_price }}</span>
+                  <small class="text-red-600 text-xs line-through">{{ item2.stroked_price }}</small>
+                </div>
+
+                <div class="flex w-full items-center justify-between space-x-2px]">
+                  <a href="#"
+                    class="text-slate-900 w-5/6 hover:bg-[#ff0b34] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-5 py-1.5 text-center border border-[#ff0b34] ">
+                    Order Now
+                  </a>
+                  <a href="#"
+                    class="text-slate-900 w-1/6 hover:bg-[#ff0b34] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#ff0b34] ">
+                    <i class="fa-regular fa-heart text-lg hover:font-bold"></i>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>   
     </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

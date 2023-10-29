@@ -14,7 +14,7 @@ export default defineConfig({
     }
   },
   server: {
-    host: 'ecom.test',
+    host: 'localhost',
     port:3000
   }, 
 })

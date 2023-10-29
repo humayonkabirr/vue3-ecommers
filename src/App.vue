@@ -21,8 +21,8 @@ import { RouterLink, RouterView } from 'vue-router'
       <li><i class="fa fa-whatsapp"></i></li>
     </ul>
   </div>
-  <header class="bg-[#ff0b34] shadow-sm sticky top-0">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 md:py-4">  
+  <header class="bg-[#ff0b34]  shadow-sm sticky top-0 z-10">
+    <nav class="mx-auto mb-2 sm:mx-5 md:mx-24 px-4 sm:px-6 lg:px-8 py-1 md:py-4">  
       <div class="flex items-center justify-between md:justify-start">
         <!-- Menu Trigger -->
         <button type="button" class="md:hidden w-10 h-10 rounded-lg -ml-2 flex justify-center items-center">
@@ -32,14 +32,16 @@ import { RouterLink, RouterView } from 'vue-router'
         </button>
         <!-- ./ Menu Trigger -->
   
-        <a href="#" class="font-bold text-gray-700 text-2xl">Shop.</a>
+        <a href="#" class="font-bold text-gray-700 text-2xl"> 
+          <img class="w-full h-[42px]" src="https://rahmansoutfit.com/admin/public/uploads/all/5hSpb8HKcK3lZ0BhNFloERDAeeUceUL0Lr5UqKrv.png" alt="">
+        </a>
   
         <div class="hidden md:flex space-x-3 flex-1 lg:ml-8">
-          <a href="#" class="px-2 py-2 rounded-lg text-gray-200 duration-1000 hover:text-gray-400 hover:border">Electronics</a>
-          <a href="#" class="px-2 py-2 rounded-lg text-gray-200 duration-1000 hover:text-gray-400 hover:border">Fashion</a>
-          <a href="#" class="px-2 py-2 rounded-lg text-gray-200 duration-1000 hover:text-gray-400 hover:border">Tools</a>
-          <a href="#" class="px-2 py-2 rounded-lg text-gray-200 duration-1000 hover:text-gray-400 hover:border">Books</a>
-          <a href="#" class="px-2 py-2 rounded-lg text-gray-200 duration-1000 hover:text-gray-400 hover:border">More</a>
+          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">Electronics</a>
+          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">Fashion</a>
+          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">Tools</a>
+          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">Books</a>
+          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">More</a>
         </div>
   
         <div class="flex items-center space-x-4">

@@ -2,7 +2,7 @@
 import { reactive } from 'vue';
 import ServiceCall from "../services/Services.js";
 
-const {  getSliders,resSliders,getProductsBestseller, resBestSelling, storeDate, getData, resData,resCateData,getProductsFeatured, resGeteatured, getCategory, status, errors  } = ServiceCall();
+const { getSliders, resSliders, getProductsBestseller, resBestSelling, storeDate, getData, resData, resCateData, getProductsFeatured, resGeteatured, getCategory, status, errors } = ServiceCall();
 
 getData('products?page=1');
 getCategory('categories/featured');
@@ -13,12 +13,12 @@ getProductsBestseller('products/best-seller');
 </script>
 
 <template>
-  <WelcomeItem>  
+  <WelcomeItem>
     <div class="m-2 sm:mx-5 md:mx-24">
-      <!-- Set up your HTML --> 
+      <!-- Set up your HTML -->
       <div class="owl-carousel w-full" id="sliders">
         <div class="flex w-full">
-          <img class="flex w-full" v-for="slider in resSliders.data" :key="slider" :src="slider.photo" alt="slider image">
+          <img class="w-full" v-for="slider in resSliders.data" :key="slider" :src="slider.photo" alt="slider image">
         </div>
       </div>
 
@@ -40,15 +40,13 @@ getProductsBestseller('products/best-seller');
           style="background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);"></div>
         <div class="w-[6%] h-full absolute z-50 right-0"
           style="background: linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);"></div>
-      </div> 
+      </div>
       <div class="carousel-items flex items-center justify-center"
         style="width: fit-content; animation: carouselAnim 10s infinite alternate linear;">
 
         <div v-for="item in resCateData.data" :key="item"
           class="carousel-focus flex items-center flex-col relative bg-white mx-1 my-10 p-2 border border-red-600 rounded-lg shadow-lg w-[200px]">
-          <img class="rounded-xl"
-            :src="item.banner"
-            alt="Img">
+          <img class="rounded-xl" :src="item.banner" alt="Img">
           <h1 class="mt-1">Shirt {{ item.name }}</h1>
         </div>
 
@@ -60,17 +58,16 @@ getProductsBestseller('products/best-seller');
 
   <WelcomeItem>
     <div v-if="resGeteatured" class="mx-2 sm:mx-5 md:mx-24 ">
-      <h1 class=" font-bold text-2xl">New Arrival Products</h1>  
+      <h1 class=" font-bold text-2xl">New Arrival Products</h1>
       <div class="owl-slider">
         <div id="carousel" class="owl-carousel grid grid-cols-5">
- 
-            <div class="item w-full" v-for="newArrival in 6" :key="newArrival.name">
+
+          <div class="item w-full" v-for="newArrival in 6" :key="newArrival.name">
             <div class="w-full bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
-              <a href="#"> 
-                  <div class="m-2 overflow-hidden">
+              <a href="#">
+                <div class="m-2 overflow-hidden">
                   <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
-                  :src="newArrival.thumbnail_image"
-                  alt="product image" />
+                    src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg" alt="product image" />
                 </div>
               </a>
               <div class="px-2 pb-2 w-full">
@@ -98,7 +95,7 @@ getProductsBestseller('products/best-seller');
 
               </div>
             </div>
-          </div> 
+          </div>
 
         </div>
       </div>
@@ -114,39 +111,40 @@ getProductsBestseller('products/best-seller');
         <div id="carousel" class="owl-carousel">
 
 
-            <div v-for="bestSell in 2" :key="bestSell" class="bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
-              <a href="#">
-                <div class="m-2 overflow-hidden">
-                  <img class="rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
-                  :src="bestSell.thumbnail_image" alt="product image" />
-                </div>
-              </a>
-              <div class="px-2 pb-2">
-                <a href="#">
-                  <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
-                    {{ bestSell.name }}
-                  </h5>
-                </a>
-
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-sm text-gray-900">BDT 599</span>
-                  <small class="text-red-600 text-xs line-through">BDT 599</small>
-                </div>
-
-                <div class="flex w-full items-center justify-between space-x-2px]">
-                  <a href="#"
-                    class="text-slate-900 w-5/6 hover:bg-[#ff0b34] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-2 py-1.5 text-center border border-[#ff0b34] ">
-                    Order Now
-                  </a>
-                  <a href="#"
-                    class="text-slate-900 w-1/6 hover:bg-[#ff0b34] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#ff0b34] ">
-                    <i class="fa-regular fa-heart text-lg hover:font-bold"></i>
-                  </a>
-                </div>
-
+          <div v-for="bestSell in 2" :key="bestSell"
+            class="bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
+            <a href="#">
+              <div class="m-2 overflow-hidden">
+                <img class="rounded-t-lg hover:rotate-12 hover:scale-125 duration-500" src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg"
+                  alt="product image" />
               </div>
+            </a>
+            <div class="px-2 pb-2">
+              <a href="#">
+                <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
+                  {{ bestSell.name }}
+                </h5>
+              </a>
+
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-sm text-gray-900">BDT 599</span>
+                <small class="text-red-600 text-xs line-through">BDT 599</small>
+              </div>
+
+              <div class="flex w-full items-center justify-between space-x-2px]">
+                <a href="#"
+                  class="text-slate-900 w-5/6 hover:bg-[#ff0b34] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-2 py-1.5 text-center border border-[#ff0b34] ">
+                  Order Now
+                </a>
+                <a href="#"
+                  class="text-slate-900 w-1/6 hover:bg-[#ff0b34] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#ff0b34] ">
+                  <i class="fa-regular fa-heart text-lg hover:font-bold"></i>
+                </a>
+              </div>
+
             </div>
-            
+          </div>
+
 
         </div>
       </div>
@@ -158,25 +156,26 @@ getProductsBestseller('products/best-seller');
   <WelcomeItem>
     <div class="mx-2 sm:mx-5 md:mx-24 ">
       <h1 class=" font-bold text-2xl">All Products </h1>
-      
+
       <div class="flex justify-center my-4 mt-6">
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
 
           <div v-for="item2 in resData.data" :key="item2">
-            <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-lg duration-1000">
-              <a href="#" class="">
+            <div
+              class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-lg duration-1000">
+
+              <router-link to="details/5">
                 <div class="m-2 overflow-hidden h-[200px]">
-                  <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
-                  :src="item2.thumbnail_image"
-                  alt="product image" />
+                  <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500" :src="item2.thumbnail_image"
+                    alt="product image" />
                 </div>
-              </a>
+              </router-link>
               <div class="px-2 pb-2 w-full">
-                <a href="#">
+                <router-link to="details/2">
                   <h5 class="font-semibold tracking-tight text-sm text-gray-900 truncate">
                     {{ item2.name }}
                   </h5>
-                </a>
+                </router-link>
 
                 <div class="flex items-center justify-between mb-2">
                   <span class="text-sm text-gray-900">{{ item2.main_price }}</span>
@@ -280,32 +279,41 @@ getProductsBestseller('products/best-seller');
       <div class="mx-2 sm:mx-5 md:mx-24">
         <div class=" grid grid-cols-3 gap-8 py-8">
           <div class="w-full text-white">
-            <img src="https://nkrmart.com/public/storage/images/general_setting/HXnCqk8BOWmVIjZIT4xIkrJeJQf2tcKJw3oLKeDJ.png" alt="">
+            <img
+              src="https://nkrmart.com/public/storage/images/general_setting/HXnCqk8BOWmVIjZIT4xIkrJeJQf2tcKJw3oLKeDJ.png"
+              alt="">
             <p>
-              nkrmart.com  is a growing fashion house in Bangladesh. Starting its journey in 2022.
+              nkrmart.com is a growing fashion house in Bangladesh. Starting its journey in 2022.
             </p>
             <p>
-              Unparalleled standard in design and quality is at the core of our business. Our goal is to lead the fashion industry by bringing quality products at affordable prices.
+              Unparalleled standard in design and quality is at the core of our business. Our goal is to lead the fashion
+              industry by bringing quality products at affordable prices.
 
             </p>
           </div>
           <div class="w-full text-white">
-            <img src="https://nkrmart.com/public/storage/images/general_setting/HXnCqk8BOWmVIjZIT4xIkrJeJQf2tcKJw3oLKeDJ.png" alt="">
+            <img
+              src="https://nkrmart.com/public/storage/images/general_setting/HXnCqk8BOWmVIjZIT4xIkrJeJQf2tcKJw3oLKeDJ.png"
+              alt="">
             <p>
-              nkrmart.com  is a growing fashion house in Bangladesh. Starting its journey in 2022.
+              nkrmart.com is a growing fashion house in Bangladesh. Starting its journey in 2022.
             </p>
             <p>
-              Unparalleled standard in design and quality is at the core of our business. Our goal is to lead the fashion industry by bringing quality products at affordable prices.
+              Unparalleled standard in design and quality is at the core of our business. Our goal is to lead the fashion
+              industry by bringing quality products at affordable prices.
 
             </p>
           </div>
           <div class="w-full text-white">
-            <img src="https://nkrmart.com/public/storage/images/general_setting/HXnCqk8BOWmVIjZIT4xIkrJeJQf2tcKJw3oLKeDJ.png" alt="">
+            <img
+              src="https://nkrmart.com/public/storage/images/general_setting/HXnCqk8BOWmVIjZIT4xIkrJeJQf2tcKJw3oLKeDJ.png"
+              alt="">
             <p>
-              nkrmart.com  is a growing fashion house in Bangladesh. Starting its journey in 2022.
+              nkrmart.com is a growing fashion house in Bangladesh. Starting its journey in 2022.
             </p>
             <p>
-              Unparalleled standard in design and quality is at the core of our business. Our goal is to lead the fashion industry by bringing quality products at affordable prices.
+              Unparalleled standard in design and quality is at the core of our business. Our goal is to lead the fashion
+              industry by bringing quality products at affordable prices.
 
             </p>
           </div>
@@ -360,5 +368,4 @@ getProductsBestseller('products/best-seller');
 .carousel-focus:hover {
   transition: all 0.8s;
   transform: scale(1.1);
-}
-</style>
+}</style>
