@@ -1,8 +1,7 @@
 <script setup>
-import { reactive } from 'vue';  
 import ServiceCall from "../services/Services.js";
 
-const { getSliders, resSliders, getProductsBestseller, resBestSelling, storeDate, getData, resData, resCateData, getProductsFeatured, resGeteatured, getCategory, status, errors } = ServiceCall();
+const { getSliders, resSliders, getProductsBestseller, resBestSelling, getData, resData, resCateData, getProductsFeatured, resGeteatured, getCategory} = ServiceCall();
 
 getData('products?page=1');
 getCategory('categories/featured');

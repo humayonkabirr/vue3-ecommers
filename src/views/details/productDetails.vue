@@ -1,9 +1,8 @@
 <script setup>
 import { useRoute, RouterLink } from "vue-router";
-import { reactive } from 'vue';
 import ServiceCall from "@/services/Services.js";
 
-const { getProdcutDeteails, resProdcutDeteails, getProductsPelated, resProductsPelated, status, errors } = ServiceCall();
+const { getProdcutDeteails, resProdcutDeteails, getProductsPelated, resProductsPelated } = ServiceCall();
 
 const route = useRoute();
 getProdcutDeteails(route.params.id)
@@ -141,11 +140,10 @@ function details() {
             </div>
           </div>
         </div>
-        <div class="mt-4 lg:mb-0">
-          <button
-            class="w-full h-10 px-5 mr-4 text-white border border-[#ff0b34] duration-700  bg-[#ff0b34] hover:bg-transparent hover:text-gray-600">
+        <div class="mt-4 lg:mb-0 flex justify-center">
+          <router-link :to="{ name: 'order', params:{ id: resProdcutDeteails[0].id } }" class="py-2 flex justify-center w-full text-white border border-[#ff0b34] duration-700  bg-[#ff0b34] hover:bg-transparent hover:text-gray-600">
             Order Now
-          </button>
+          </router-link> 
         </div>
       </div>
 
