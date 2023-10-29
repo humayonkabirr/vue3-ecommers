@@ -179,7 +179,7 @@ function details() {
         <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-lg duration-1000">
 
           <router-link :to="{ name: 'details', params: { id: item2.id } }" :onclick="details">
-            <div class="m-2 overflow-hidden h-[200px]">
+            <div class="m-2 overflow-hidden h-[280px]">
               <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500" :src="item2.thumbnail_image"
                 alt="product image" />
             </div>
