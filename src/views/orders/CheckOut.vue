@@ -1,12 +1,11 @@
 <script setup>
-import { useRoute, RouterLink } from "vue-router";
+import { useRoute } from "vue-router";
 import ServiceCall from "@/services/Services.js";
 
-const { getProdcutDeteails, getProductsPelated, resProductsPelated } = ServiceCall();
+const { getProdcutDeteails, resProdcutDeteails} = ServiceCall();
 
 const route = useRoute();
 getProdcutDeteails(route.params.id)
-getProductsPelated(route.params.id)
 
 
 </script>
@@ -470,9 +469,9 @@ getProductsPelated(route.params.id)
 
         <div class="flex items-center justify-between">
           <button
-            class="bg-[#ff0b34] w-full hover:bg-transparent hover:text-black border border-[#ff0b34] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            class="bg-[#ff0b34] w-full duration-1000 hover:bg-transparent hover:text-black border border-[#ff0b34] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button">
-            Sign In
+            PLACE ORDER 
           </button>
           
         </div>
@@ -482,7 +481,52 @@ getProductsPelated(route.params.id)
   </div>
 
   <div class="col-span-6">
+<div class="">
+  <div class="flex justify-between items-center">
+    <div class="flex space-x-4">
+    <img class="border border-red-500 w-2/12" :src="resProdcutDeteails[0].thumbnail_image" alt="">
+    <div>
+      <h1 class="text-lg truncate">{{ resProdcutDeteails[0].name }}</h1>
+      <h1 class="text-lg truncate">{{ resProdcutDeteails[0].main_price }}</h1>
+      <h1 class="text-lg truncate">{{ resProdcutDeteails[0].main_price }}</h1>
+      <h1 class="text-lg truncate">{{ resProdcutDeteails[0].main_price }}</h1>
+      <h1 class="text-lg truncate">{{ resProdcutDeteails[0].main_price }}</h1>
+    </div>
+  </div>
 
+  <div >
+    Delate
+  </div>
+  </div>
+
+  <div class="mt-8">
+   <div class="flex justify-between px-28 py-4 border-b border-gray-800">
+    <p>Sub Total</p>
+    <p>{{ resProdcutDeteails[0].main_price }}</p>
+   </div>
+   <div class="flex justify-between px-28 py-4 border-b border-gray-800">
+    <p>Sub Total</p>
+    <p>{{ resProdcutDeteails[0].main_price }}</p>
+   </div>
+   <div class="flex justify-between px-28 py-4 border-b border-gray-800">
+    <p>Sub Total</p>
+    <p>{{ resProdcutDeteails[0].main_price }}</p>
+   </div>
+   <div class="flex justify-between px-28 py-4 border-b border-gray-800">
+    <p>Sub Total</p>
+    <p>{{ resProdcutDeteails[0].main_price }}</p>
+   </div>
+   <div class="flex justify-between px-28 py-4 border-b border-gray-800">
+    <p>Sub Total</p>
+    <p>{{ resProdcutDeteails[0].main_price }}</p>
+   </div>
+   <div class="flex justify-between px-28 py-4 border-b border-gray-800">
+    <p>Sub Total</p>
+    <p>{{ resProdcutDeteails[0].main_price }}</p>
+   </div>
+  </div>
+
+</div>
   </div>
 </div></template>
 
