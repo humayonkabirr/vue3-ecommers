@@ -11,7 +11,7 @@ getProductsPelated(route.params.id)
 
 </script>
 <template>
-  <div class="m-2 sm:mx-5 md:mx-24 my-8 grid grid-cols-12">
+  <div class="m-2 sm:mx-5 md:mx-24 my-8 grid grid-cols-12 space-x-3">
     <div class="col-span-6">
 
       <div class="w-full ">
@@ -37,7 +37,7 @@ getProductsPelated(route.params.id)
               id="mobileNumber" type="number" placeholder="Mobile Number">
           </div>
 
-          <div class="mb-6">
+          <div class="mb-2">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="mobileNumber">
               District *
             </label>
@@ -249,7 +249,7 @@ getProductsPelated(route.params.id)
           </div>
         </div>
 
-          <div class="mb-6">
+          <div class="mb-2">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="mobileNumber">
               Thana/Upazila *
             </label>
@@ -461,27 +461,23 @@ getProductsPelated(route.params.id)
           </div>
         </div>
 
-          <div class="mb-6">
+          <div class="">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="mobileNumber">
               Address *
             </label>
-             <textarea name="" id="" cols="30" rows="10"></textarea>
+             <textarea name="" id="" class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"></textarea>
         </div>
 
         <div class="flex items-center justify-between">
           <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            class="bg-[#ff0b34] w-full hover:bg-transparent hover:text-black border border-[#ff0b34] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button">
             Sign In
           </button>
-          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-            Forgot Password?
-          </a>
+          
         </div>
       </form>
-      <p class="text-center text-gray-500 text-xs">
-        &copy;2020 Acme Corp. All rights reserved.
-      </p>
+      
     </div>
   </div>
 
