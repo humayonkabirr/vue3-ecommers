@@ -1,5 +1,5 @@
 <script setup>
-import { reactive } from 'vue';
+import { reactive } from 'vue';  
 import ServiceCall from "../services/Services.js";
 
 const { getSliders, resSliders, getProductsBestseller, resBestSelling, storeDate, getData, resData, resCateData, getProductsFeatured, resGeteatured, getCategory, status, errors } = ServiceCall();
@@ -9,6 +9,8 @@ getCategory('categories/featured');
 getProductsFeatured('products/featured');
 getSliders('sliders');
 getProductsBestseller('products/best-seller');
+
+
 
 </script>
 
@@ -64,14 +66,14 @@ getProductsBestseller('products/best-seller');
 
           <div class="item w-full" v-for="newArrival in 6" :key="newArrival.name">
             <div class="w-full bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
-               <router-link to="details/2">
+               <router-link :to="`details/${newArrival.id}`">
                 <div class="m-2 overflow-hidden">
                   <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
                     src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg" alt="product image" />
                 </div>
                </router-link>
               <div class="px-2 pb-2 w-full">
-                 <router-link to="details/2">
+                 <router-link :to="`details/${newArrival.id}`">
                   <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
                     {{ newArrival.name }}
                   </h5>
@@ -113,14 +115,14 @@ getProductsBestseller('products/best-seller');
 
           <div v-for="bestSell in 2" :key="bestSell"
             class="bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
-             <router-link to="details/2">
+             <router-link :to="`details/${bestSell.id}`">
               <div class="m-2 overflow-hidden">
                 <img class="rounded-t-lg hover:rotate-12 hover:scale-125 duration-500" src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg"
                   alt="product image" />
               </div>
              </router-link>
             <div class="px-2 pb-2">
-              <router-link to="details/2">
+              <router-link :to="`details/${bestSell.id}`">
                 <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
                   {{ bestSell.name }}
                 </h5>
@@ -164,14 +166,14 @@ getProductsBestseller('products/best-seller');
             <div
               class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-lg duration-1000">
 
-              <router-link to="details/5">
+              <router-link :to="`details/${item2.id}`">
                 <div class="m-2 overflow-hidden h-[200px]">
                   <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500" :src="item2.thumbnail_image"
                     alt="product image" />
                 </div>
               </router-link>
               <div class="px-2 pb-2 w-full">
-                <router-link to="details/2">
+                <router-link :to="`details/${item2.id}`">
                   <h5 class="font-semibold tracking-tight text-sm text-gray-900 truncate">
                     {{ item2.name }}
                   </h5>
@@ -280,42 +282,30 @@ getProductsBestseller('products/best-seller');
         <div class=" grid grid-cols-3 gap-8 py-8">
           <div class="w-full text-white">
             <img
-              src="https://nkrmart.com/public/storage/images/general_setting/HXnCqk8BOWmVIjZIT4xIkrJeJQf2tcKJw3oLKeDJ.png"
+              src="https://rahmansoutfit.com/admin/public/uploads/all/5hSpb8HKcK3lZ0BhNFloERDAeeUceUL0Lr5UqKrv.png"
               alt="">
-            <p>
-              nkrmart.com is a growing fashion house in Bangladesh. Starting its journey in 2022.
-            </p>
-            <p>
-              Unparalleled standard in design and quality is at the core of our business. Our goal is to lead the fashion
-              industry by bringing quality products at affordable prices.
+            
+          </div>
+          <div class="w-full text-white flex space-x-8 justify-between">
+            <div>
+              <h1 class="text-2xl">Quick Links</h1>
 
-            </p>
+               <router-link to="/">About Us</router-link><br>
+               <router-link to="/">Contact Us</router-link><br>
+            </div>
+            <div>
+              <h1 class="text-2xl">Information</h1>
+
+              <div class="">
+                <router-link to="/">How to order</router-link> <br>
+               <router-link to="/">Return Policy</router-link><br>
+               <router-link to="/">Shipment</router-link><br>
+              </div>
+            </div>
           </div>
           <div class="w-full text-white">
-            <img
-              src="https://nkrmart.com/public/storage/images/general_setting/HXnCqk8BOWmVIjZIT4xIkrJeJQf2tcKJw3oLKeDJ.png"
-              alt="">
-            <p>
-              nkrmart.com is a growing fashion house in Bangladesh. Starting its journey in 2022.
-            </p>
-            <p>
-              Unparalleled standard in design and quality is at the core of our business. Our goal is to lead the fashion
-              industry by bringing quality products at affordable prices.
-
-            </p>
-          </div>
-          <div class="w-full text-white">
-            <img
-              src="https://nkrmart.com/public/storage/images/general_setting/HXnCqk8BOWmVIjZIT4xIkrJeJQf2tcKJw3oLKeDJ.png"
-              alt="">
-            <p>
-              nkrmart.com is a growing fashion house in Bangladesh. Starting its journey in 2022.
-            </p>
-            <p>
-              Unparalleled standard in design and quality is at the core of our business. Our goal is to lead the fashion
-              industry by bringing quality products at affordable prices.
-
-            </p>
+            <h1 class="text-2xl text-black">Follow Us</h1>
+             
           </div>
 
 

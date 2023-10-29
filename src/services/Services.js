@@ -16,6 +16,8 @@ export default function ServiceCall() {
   const resGeteatured = ref([]); 
   const resBestSelling = ref([]); 
   const resSliders = ref([]); 
+  const resProdcutDeteails = ref([]); 
+  const resProductsPelated = ref([]); 
 
   const storeDate = async (url, data) => {
     try {
@@ -128,5 +130,31 @@ export default function ServiceCall() {
     }
   };
 
-  return { getSliders,resSliders, getProductsBestseller, resBestSelling, storeDate, getData, resData,resCateData,getProductsFeatured, resGeteatured, getCategory, status, errors };
+  const getProdcutDeteails = async (url) => { 
+    try {
+      resProdcutDeteails.value = [];
+      let response = await axios.get("products/"+url); 
+      resProdcutDeteails.value = response.data.data;
+      console.log(response.data.data);
+      // console.log(resProdcutDeteails);
+    } catch (e) {
+      console.log(e);
+      // await router.push("/error");
+    }
+  };
+
+  const getProductsPelated = async (url) => { 
+    try {
+      resProductsPelated.value = [];
+      let response = await axios.get("products/related/"+url); 
+      resProductsPelated.value = response.data.data;
+      console.log(response.data.data);
+      // console.log(resProductsPelated);
+    } catch (e) {
+      console.log(e);
+      // await router.push("/error");
+    }
+  };
+
+  return { getProductsPelated, resProductsPelated, getProdcutDeteails,resProdcutDeteails, getSliders,resSliders, getProductsBestseller, resBestSelling, storeDate, getData, resData,resCateData,getProductsFeatured, resGeteatured, getCategory, status, errors };
 }

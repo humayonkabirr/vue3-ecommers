@@ -1,22 +1,32 @@
 <script setup>
+import { useRoute, RouterLink } from "vue-router";
+import { reactive } from 'vue';
+import ServiceCall from "@/services/Services.js";
+
+const { getProdcutDeteails, resProdcutDeteails, getProductsPelated, resProductsPelated, status, errors } = ServiceCall();
+
+const route = useRoute();
+getProdcutDeteails(route.params.id)
+getProductsPelated(route.params.id)
+
+function details() {
+  getProdcutDeteails(route.params.id)
+  getProductsPelated(route.params.id)
+}
 
 </script>
 <template>
   <div class="m-2 sm:mx-5 md:mx-24 grid grid-cols-12">
     <div class="col-span-5 flex space-x-2">
       <div class="w-1/12 space-y-2">
-        <img class="border border-red-500"
-          src="https://nkrmart.com/public/storage/images/product/product_1698530702_3756.jpg" alt="">
-        <img src="https://nkrmart.com/public/storage/images/product/product_1698530702_3756.jpg" alt="">
-        <img src="https://nkrmart.com/public/storage/images/product/product_1698530702_3756.jpg" alt="">
+        <img class="border border-red-500" :src="resProdcutDeteails[0].thumbnail_image" alt="">
       </div>
       <div class="w-11/12 overflow-hidden">
-        <img class=" hover:scale-150 duration-700"
-          src="https://nkrmart.com/public/storage/images/product/product_1698530702_3756.jpg" alt="">
+        <img class=" hover:scale-150 duration-700" :src="resProdcutDeteails[0].thumbnail_image" alt="">
       </div>
     </div>
     <div class="col-span-4 px-6">
-      <h1 class="text-xl">Premium Quality Formal Solid Shirt</h1>
+      <h1 class="text-xl">{{ resProdcutDeteails[0].name }}</h1>
       <a href="https://wa.me/+8804641546" class="flex items-center hover:text-red-400">
         <svg data-v-11f90b60="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18px" height="18px"
           fill-rule="evenodd" clip-rule="evenodd" class="single_whats_app">
@@ -40,7 +50,8 @@
       </a>
 
       <div class="mt-4 space-x-2">
-        Price: <strong>152</strong> <small class="text-red-400 line-through">1523</small>
+        Price: <strong>{{ resProdcutDeteails[0].main_price }}</strong> <small class="text-red-400 line-through">{{
+          resProdcutDeteails[0].stroked_price }}</small>
       </div>
 
       <div class="my-4">
@@ -104,38 +115,38 @@
               </div>
             </div>
           </div>
-          
+
           <div class="flex">
             <div class="mb-4 mr-4 lg:mb-0">
-            <button
-              class="flex items-center justify-center w-full h-10 p-2 text-gray-700 border border-[#ff0b34] duration-700 hover:bg-[#ff0b34] hover:text-white lg:w-11">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
-                viewBox="0 0 16 16">
-                <path
-                  d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
-                </path>
-              </svg>
-            </button>
-          </div>
-          <div class="mb-4 lg:mb-0">
-            <button
-              class="flex items-center justify-center w-full h-10 p-2 text-gray-700 border border-[#ff0b34] duration-700 hover:bg-[#ff0b34] hover:text-white lg:w-11">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class=" bi bi-heart"
-                viewBox="0 0 16 16">
-                <path
-                  d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
-                </path>
-              </svg>
-            </button>
-          </div> 
+              <button
+                class="flex items-center justify-center w-full h-10 p-2 text-gray-700 border border-[#ff0b34] duration-700 hover:bg-[#ff0b34] hover:text-white lg:w-11">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+                  </path>
+                </svg>
+              </button>
+            </div>
+            <div class="mb-4 lg:mb-0">
+              <button
+                class="flex items-center justify-center w-full h-10 p-2 text-gray-700 border border-[#ff0b34] duration-700 hover:bg-[#ff0b34] hover:text-white lg:w-11">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class=" bi bi-heart"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z">
+                  </path>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         <div class="mt-4 lg:mb-0">
-            <button
-              class="w-full h-10 px-5 mr-4 text-gray-400 border border-[#ff0b34] duration-700 hover:bg-[#ff0b34] hover:text-white">
-              Buy Now
-            </button>
-          </div>
+          <button
+            class="w-full h-10 px-5 mr-4 text-white border border-[#ff0b34] duration-700  bg-[#ff0b34] hover:bg-transparent hover:text-gray-600">
+            Order Now
+          </button>
+        </div>
       </div>
 
     </div>
@@ -159,59 +170,51 @@
     <strong class="px-4 py-3 hover:bg-[#ff0b34] hover:text-white duration-1000">Return Policy</strong>
   </div>
 
-  <div class="m-2 sm:mx-5 md:mx-24 mt-8 ">
-    <p>Premium Quality Solid Shirt</p>
-    <p>Fabrics: Oxford Cotton</p>
-    <p>Size: M, L, XL</p>
-    <p>M= Length-28″ Chest- 38″</p>
-    <p>L= Length-29″ Chest- 40″</p>
-    <p>XL= Length-30″ Chest- 42″</p>
-    <p>Fashionable & Comfortable</p>
-    <p>Guaranteed Fabrics</p>
+  <div class="m-2 sm:mx-5 md:mx-24 mt-8" v-html="resProdcutDeteails[0].description">
   </div>
 
   <div class="mx-2 sm:mx-5 md:mx-24 my-6">
-      <h1 class=" font-bold text-2xl my-2">Related Products</h1> 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+    <h1 class=" font-bold text-2xl my-2">Related Products</h1>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
 
-          <div v-for="item2 in 42" :key="item2">
-            <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-lg duration-1000">
-              <a href="#" class="">
-                <div class="m-2 overflow-hidden h-[200px]">
-                  <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
-                  :src="item2.thumbnail_image"
-                  alt="product image" />
-                </div>
-              </a>
-              <div class="px-2 pb-2 w-full">
-                <a href="#">
-                  <h5 class="font-semibold tracking-tight text-sm text-gray-900 truncate">
-                    {{ item2.name }}
-                  </h5>
-                </a>
+      <div v-for="item2 in resProductsPelated" :key="item2">
+        <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-lg duration-1000">
 
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-sm text-gray-900">{{ item2.main_price }}</span>
-                  <small class="text-red-600 text-xs line-through">{{ item2.stroked_price }}</small>
-                </div>
-
-                <div class="flex w-full items-center justify-between space-x-2px]">
-                  <a href="#"
-                    class="text-slate-900 w-5/6 hover:bg-[#ff0b34] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-5 py-1.5 text-center border border-[#ff0b34] ">
-                    Order Now
-                  </a>
-                  <a href="#"
-                    class="text-slate-900 w-1/6 hover:bg-[#ff0b34] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#ff0b34] ">
-                    <i class="fa-regular fa-heart text-lg hover:font-bold"></i>
-                  </a>
-                </div>
-
-              </div>
+          <router-link :to="{ name: 'details', params: { id: item2.id } }" :onclick="details">
+            <div class="m-2 overflow-hidden h-[200px]">
+              <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500" :src="item2.thumbnail_image"
+                alt="product image" />
             </div>
-          </div>
+          </router-link>
+          <div class="px-2 pb-2 w-full">
+            <router-link :to="{ name: 'details', params: { id: item2.id } }" :onclick="details">
+              <h5 class="font-semibold tracking-tight text-sm text-gray-900 truncate">
+                {{ item2.name }}
+              </h5>
+            </router-link>
 
-        </div>   
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm text-gray-900">{{ item2.main_price }}</span>
+              <small class="text-red-600 text-xs line-through">{{ item2.stroked_price }}</small>
+            </div>
+
+            <div class="flex w-full items-center justify-between space-x-2px]">
+              <a href="#"
+                class="text-slate-900 w-5/6 hover:bg-[#ff0b34] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-5 py-1.5 text-center border border-[#ff0b34] ">
+                Order Now
+              </a>
+              <a href="#"
+                class="text-slate-900 w-1/6 hover:bg-[#ff0b34] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#ff0b34] ">
+                <i class="fa-regular fa-heart text-lg hover:font-bold"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
 </template>
 
 <style scoped></style>
