@@ -65,14 +65,14 @@ getProductsBestseller('products/best-seller');
 
           <div class="item w-full" v-for="newArrival in 6" :key="newArrival.name">
             <div class="w-full bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
-               <router-link :to="`details/${newArrival.id}`">
+               <router-link :to="`details/5`">
                 <div class="m-2 overflow-hidden">
                   <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
                     src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg" alt="product image" />
                 </div>
                </router-link>
               <div class="px-2 pb-2 w-full">
-                 <router-link :to="`details/${newArrival.id}`">
+                 <router-link :to="`details/5`">
                   <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
                     {{ newArrival.name }}
                   </h5>
@@ -114,14 +114,14 @@ getProductsBestseller('products/best-seller');
 
           <div v-for="bestSell in 2" :key="bestSell"
             class="bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
-             <router-link :to="`details/${bestSell.id}`">
+             <router-link :to="`details/6`">
               <div class="m-2 overflow-hidden">
                 <img class="rounded-t-lg hover:rotate-12 hover:scale-125 duration-500" src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg"
                   alt="product image" />
               </div>
              </router-link>
             <div class="px-2 pb-2">
-              <router-link :to="`details/${bestSell.id}`">
+              <router-link :to="`details/6`">
                 <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
                   {{ bestSell.name }}
                 </h5>
