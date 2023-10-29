@@ -15,7 +15,9 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/vue-fontawesome": "^3.0.3",
+    "axios": "^1.5.1",
     "vue": "^3.3.4",
+    "vue-axios": "^3.5.2",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {

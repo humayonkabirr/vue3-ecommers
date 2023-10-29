@@ -1,15 +1,24 @@
 <script setup>
+import { reactive } from 'vue';
+import ServiceCall from "../services/Services.js";
+
+const {  getSliders,resSliders,getProductsBestseller, resBestSelling, storeDate, getData, resData,resCateData,getProductsFeatured, resGeteatured, getCategory, status, errors  } = ServiceCall();
+
+getData('products?page=1');
+getCategory('categories/featured');
+getProductsFeatured('products/featured');
+getSliders('sliders');
+getProductsBestseller('products/best-seller');
+
 </script>
 
 <template>
-  <WelcomeItem>
-
-
+  <WelcomeItem>  
     <div class="m-2 sm:mx-5 md:mx-24">
-      <!-- Set up your HTML -->
-      <div class="owl-carousel" id="sliders">
-        <div class="" v-for="index in 5" :key="index">
-          <img src="https://nkrmart.com/public/storage/images/slider/XLBVNKFCwyr709clkQ9JftbSca2PEWY68KNJJMDj.jpg" alt="">
+      <!-- Set up your HTML --> 
+      <div class="owl-carousel w-full" id="sliders">
+        <div class="flex w-full">
+          <img class="flex w-full" v-for="slider in resSliders.data" :key="slider" :src="slider.photo" alt="slider image">
         </div>
       </div>
 
@@ -31,17 +40,16 @@
           style="background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);"></div>
         <div class="w-[6%] h-full absolute z-50 right-0"
           style="background: linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);"></div>
-      </div>
-
+      </div> 
       <div class="carousel-items flex items-center justify-center"
         style="width: fit-content; animation: carouselAnim 10s infinite alternate linear;">
 
-        <div v-for="item in 12" :key="item"
+        <div v-for="item in resCateData.data" :key="item"
           class="carousel-focus flex items-center flex-col relative bg-white mx-1 my-10 p-2 border border-red-600 rounded-lg shadow-lg w-[200px]">
           <img class="rounded-xl"
-            src="https://nkrmart.com/public/storage/images/subCategory/0RHRsQEQ4hHcFs8yU1bds6UwWdrOGm6Z5CbAADc0.jpg"
+            :src="item.banner"
             alt="Img">
-          <h1 class="mt-1">Shirt {{ item }}</h1>
+          <h1 class="mt-1">Shirt {{ item.name }}</h1>
         </div>
 
       </div>
@@ -51,25 +59,24 @@
   </WelcomeItem>
 
   <WelcomeItem>
-    <div class="mx-2 sm:mx-5 md:mx-24 ">
-      <h1 class=" font-bold text-2xl">New Arrival Products</h1>
-
+    <div v-if="resGeteatured" class="mx-2 sm:mx-5 md:mx-24 ">
+      <h1 class=" font-bold text-2xl">New Arrival Products</h1>  
       <div class="owl-slider">
-        <div id="carousel" class="owl-carousel">
-
-          <div class="item" v-for="index in 30" :key="index">
-            <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
+        <div id="carousel" class="owl-carousel grid grid-cols-5">
+ 
+            <div class="item w-full" v-for="newArrival in 6" :key="newArrival.name">
+            <div class="w-full bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
               <a href="#"> 
                   <div class="m-2 overflow-hidden">
                   <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
-                  src="https://nkrmart.com/public/storage/images/product_thumbnail_img/thumbnail_1697615262_1412.jpg"
+                  :src="newArrival.thumbnail_image"
                   alt="product image" />
                 </div>
               </a>
               <div class="px-2 pb-2 w-full">
                 <a href="#">
                   <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
-                    Apple Watch Series 7 GPS
+                    {{ newArrival.name }}
                   </h5>
                 </a>
 
@@ -91,7 +98,7 @@
 
               </div>
             </div>
-          </div>
+          </div> 
 
         </div>
       </div>
@@ -101,25 +108,23 @@
   </WelcomeItem>
 
   <WelcomeItem>
-    <div class="mx-2 sm:mx-5 md:mx-24 ">
+    <div v-if="resBestSelling" class="mx-2 sm:mx-5 md:mx-24 ">
       <h1 class=" font-bold text-2xl">Top Selling Product</h1>
-
       <div class="owl-slider">
         <div id="carousel" class="owl-carousel">
 
-          <div class="item" v-for="index in 30" :key="index">
-            <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
+
+            <div v-for="bestSell in 2" :key="bestSell" class="bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-xl">
               <a href="#">
                 <div class="m-2 overflow-hidden">
-                  <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
-                  src="https://nkrmart.com/public/storage/images/product_thumbnail_img/169529915412.%20Sky%20+%20Pest.jpg"
-                  alt="product image" />
+                  <img class="rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
+                  :src="bestSell.thumbnail_image" alt="product image" />
                 </div>
               </a>
-              <div class="px-2 pb-2 w-full">
+              <div class="px-2 pb-2">
                 <a href="#">
                   <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
-                    Apple Watch Series 7 GPS
+                    {{ bestSell.name }}
                   </h5>
                 </a>
 
@@ -141,7 +146,7 @@
 
               </div>
             </div>
-          </div>
+            
 
         </div>
       </div>
@@ -153,31 +158,29 @@
   <WelcomeItem>
     <div class="mx-2 sm:mx-5 md:mx-24 ">
       <h1 class=" font-bold text-2xl">All Products </h1>
-
-
-
+      
       <div class="flex justify-center my-4 mt-6">
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
 
-          <div v-for="index in 30" :key="index">
+          <div v-for="item2 in resData.data" :key="item2">
             <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-lg duration-1000">
               <a href="#" class="">
-                <div class="m-2 overflow-hidden">
+                <div class="m-2 overflow-hidden h-[200px]">
                   <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500"
-                  src="https://nkrmart.com/public/storage/images/product_thumbnail_img/169529915412.%20Sky%20+%20Pest.jpg"
+                  :src="item2.thumbnail_image"
                   alt="product image" />
                 </div>
               </a>
               <div class="px-2 pb-2 w-full">
                 <a href="#">
                   <h5 class="font-semibold tracking-tight text-sm text-gray-900 truncate">
-                    Apple Watch Series 7 GPS
+                    {{ item2.name }}
                   </h5>
                 </a>
 
                 <div class="flex items-center justify-between mb-2">
-                  <span class="text-sm text-gray-900">BDT 599</span>
-                  <small class="text-red-600 text-xs line-through">BDT 599</small>
+                  <span class="text-sm text-gray-900">{{ item2.main_price }}</span>
+                  <small class="text-red-600 text-xs line-through">{{ item2.stroked_price }}</small>
                 </div>
 
                 <div class="flex w-full items-center justify-between space-x-2px]">
