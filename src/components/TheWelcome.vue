@@ -149,8 +149,7 @@ getProductsBestseller('products/best-seller');
 
         </div>
       </div>
-
-
+fhgfhfhj
     </div>
   </WelcomeItem>
 
@@ -166,8 +165,8 @@ getProductsBestseller('products/best-seller');
               class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-lg duration-1000">
 
               <router-link :to="`details/${item2.id}`">
-                <div class="m-2 overflow-hidden h-[280px]">
-                  <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500" :src="item2.thumbnail_image"
+                <div class="m-2 overflow-hidden">
+                  <img class="rounded-t-lg hover:rotate-12 hover:scale-125 duration-500" :src="item2.thumbnail_image"
                     alt="product image" />
                 </div>
               </router-link>

@@ -1,6 +1,7 @@
 <script setup>
+import { reactive, ref } from "vue";
 import { useRoute, RouterLink } from "vue-router";
-import ServiceCall from "@/services/Services.js";
+import ServiceCall from "@/services/Services.js"; 
 
 const { getProdcutDeteails, resProdcutDeteails, getProductsPelated, resProductsPelated } = ServiceCall();
 
@@ -8,9 +9,18 @@ const route = useRoute();
 getProdcutDeteails(route.params.id)
 getProductsPelated(route.params.id)
 
+const quality = ref(1);
+
+const FormData = reactive({
+  selectedSize: null,
+});
+
 function details() {
   getProdcutDeteails(route.params.id)
   getProductsPelated(route.params.id)
+}
+function selectSize(selectSize) {  
+  FormData.selectedSize = selectSize;
 }
 
 </script>
@@ -59,39 +69,22 @@ function details() {
         </span>
       </div>
 
-      <div class="mt-8">
-        <h1 class="text-lg">Select Size</h1>
-        <div class="flex flex-wrap -mb-2">
-          <button class="py-1 mb-2 mr-1 border w-11 border-[#ff0b34] hover:text-white hover:bg-[#ff0b34]">XL
-          </button>
-          <button class="py-1 mb-2 mr-1 border w-11 border-[#ff0b34] hover:text-white hover:bg-[#ff0b34]">S
-          </button>
-          <button class="py-1 mb-2 mr-1 border w-11 border-[#ff0b34] hover:text-white hover:bg-[#ff0b34]">M
-          </button>
-          <button class="py-1 mb-2 mr-1 border w-11 border-[#ff0b34] hover:text-white hover:bg-[#ff0b34]">XS
-          </button>
+      <div v-if="resProdcutDeteails[0].choice_options[0]" class="mt-8">
+        <h1 class="text-lg">Select Size</h1> 
+        <div class="flex flex-wrap -mb-2"> 
+          <button v-for="item in resProdcutDeteails[0].choice_options[0].options" :key="item" @click="selectSize(item)" :class="{ 'text-white': item == FormData.selectedSize ?? 'true', 'bg-[#ff0b34]': item == FormData.selectedSize ?? 'true'}" class="py-1 mb-2 mr-1 border w-11 border-[#ff0b34] hover:text-white hover:bg-[#ff0b34]">
+            {{ item }}
+          </button> 
         </div>
       </div>
 
-      <div class="mt-8">
+      <div v-if="resProdcutDeteails[0].colors[0]" class="mt-8">
         <h1 class="text-lg">Select Color</h1>
         <div class="flex space-x-3">
-          <button
-            class="p-1 mb-2 border border-transparent rounded-full hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400 ">
-            <div class="w-6 h-6 bg-red-600 rounded-full"></div>
-          </button>
-          <button
-            class="p-1 mb-2 border border-transparent rounded-full hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400">
-            <div class="w-6 h-6 bg-green-600 rounded-full"></div>
-          </button>
-          <button
-            class="p-1 mb-2 border border-transparent rounded-full hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400">
-            <div class="w-6 h-6 bg-yellow-500 rounded-full"></div>
-          </button>
-          <button
-            class="p-1 mb-2 border border-transparent rounded-full hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400">
-            <div class="w-6 h-6 rounded-full bg-sky-400"></div>
-          </button>
+          <button v-for="colors in resProdcutDeteails[0].colors" :key="colors" @click="selectSize(colors)" 
+            class="p-1 mb-2 border border-transparent rounded-full hover:bg-black hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400 ">
+            <div class="w-6 h-6  rounded-full" :class="'bg-[red]'"></div>
+          </button> 
         </div>
       </div>
 
@@ -100,14 +93,14 @@ function details() {
           <div class="mb-4 mr-4 lg:mb-0">
             <div class="w-28">
               <div class="relative flex flex-row w-full h-10 bg-transparent border border-[#ff0b34]">
-                <button
+                <button  @click="quality >1 ? quality-- : ''"
                   class="w-20 h-full text-gray-600 bg-gray-100 border-r  outline-none cursor-pointer hover:text-gray-200 duration-1000 hover:bg-[#ff0b34]">
                   <span class="m-auto text-2xl font-thin">-</span>
                 </button>
                 <input type="number"
                   class="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-100 outline-none dark:text-gray-400 dark:placeholder-gray-400 focus:outline-none text-md hover:text-black"
-                  placeholder="1">
-                <button
+                  min="1" :value="quality">
+                <button @click="quality++"
                   class="w-20 h-full text-gray-600 bg-gray-100 border-l outline-none cursor-pointer hover:text-gray-200 duration-1000 hover:bg-[#ff0b34]">
                   <span class="m-auto text-2xl font-thin">+</span>
                 </button>
@@ -179,7 +172,7 @@ function details() {
         <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-lg duration-1000">
 
           <router-link :to="{ name: 'details', params: { id: item2.id } }" :onclick="details">
-            <div class="m-2 overflow-hidden h-[280px]">
+            <div class="m-2 overflow-hidden">
               <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500" :src="item2.thumbnail_image"
                 alt="product image" />
             </div>
