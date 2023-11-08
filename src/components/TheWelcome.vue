@@ -149,7 +149,7 @@ getProductsBestseller('products/best-seller');
 
         </div>
       </div>
-fhgfh 
+      
     </div>
   </WelcomeItem>
 
