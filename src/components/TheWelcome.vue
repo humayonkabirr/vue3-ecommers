@@ -85,11 +85,11 @@ getProductsBestseller('products/best-seller');
 
                 <div class="flex w-full items-center justify-between space-x-2px]">
                   <a href="#"
-                    class="text-slate-900 w-5/6 hover:bg-[#ff0b34] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-2 py-1.5 text-center border border-[#ff0b34] ">
+                    class="text-slate-900 w-5/6 hover:bg-[#010412] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-2 py-1.5 text-center border border-[#010412] ">
                     Order Now
                   </a>
                   <a href="#"
-                    class="text-slate-900 w-1/6 hover:bg-[#ff0b34] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#ff0b34] ">
+                    class="text-slate-900 w-1/6 hover:bg-[#010412] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#010412] ">
                     <i class="fa-regular fa-heart text-lg hover:font-bold"></i>
                   </a>
                 </div>
@@ -134,11 +134,11 @@ getProductsBestseller('products/best-seller');
 
               <div class="flex w-full items-center justify-between space-x-2px]">
                 <a href="#"
-                  class="text-slate-900 w-5/6 hover:bg-[#ff0b34] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-2 py-1.5 text-center border border-[#ff0b34] ">
+                  class="text-slate-900 w-5/6 hover:bg-[#010412] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-2 py-1.5 text-center border border-[#010412] ">
                   Order Now
                 </a>
                 <a href="#"
-                  class="text-slate-900 w-1/6 hover:bg-[#ff0b34] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#ff0b34] ">
+                  class="text-slate-900 w-1/6 hover:bg-[#010412] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#010412] ">
                   <i class="fa-regular fa-heart text-lg hover:font-bold"></i>
                 </a>
               </div>
@@ -184,11 +184,11 @@ getProductsBestseller('products/best-seller');
 
                 <div class="flex w-full items-center justify-between space-x-2px]">
                   <a href="#"
-                    class="text-slate-900 w-5/6 hover:bg-[#ff0b34] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-5 py-1.5 text-center border border-[#ff0b34] ">
+                    class="text-slate-900 w-5/6 hover:bg-[#010412] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-5 py-1.5 text-center border border-[#010412] ">
                     Order Now
                   </a>
                   <a href="#"
-                    class="text-slate-900 w-1/6 hover:bg-[#ff0b34] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#ff0b34] ">
+                    class="text-slate-900 w-1/6 hover:bg-[#010412] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#010412] ">
                     <i class="fa-regular fa-heart text-lg hover:font-bold"></i>
                   </a>
                 </div>
@@ -212,7 +212,7 @@ getProductsBestseller('products/best-seller');
           <div class="service_container">
             <div class="">
               <div class=""><i
-                  class="fa fa-thumbs-up text-5xl text-white bg-[#FF0B34] p-4 rounded-[50%] border-8 border-[#c0c4c8]"></i>
+                  class="fa fa-thumbs-up text-5xl text-white bg-[#010412] p-4 rounded-[50%] border-8 border-[#c0c4c8]"></i>
               </div>
             </div>
             <div class="service_text">
@@ -229,7 +229,7 @@ getProductsBestseller('products/best-seller');
           <div class="service_container">
             <div class="service_outer">
               <div class="service_inner"><i
-                  class="fa fa-headphones text-5xl text-white bg-[#FF0B34] p-4 rounded-[50%] border-8 border-[#c0c4c8]"></i>
+                  class="fa fa-headphones text-5xl text-white bg-[#010412] p-4 rounded-[50%] border-8 border-[#c0c4c8]"></i>
               </div>
             </div>
             <h4>
@@ -244,7 +244,7 @@ getProductsBestseller('products/best-seller');
           <div class="service_container">
             <div class="service_outer">
               <div class="service_inner"><i
-                  class="fa fa-truck text-5xl text-white bg-[#FF0B34] p-4 rounded-[50%] border-8 border-[#c0c4c8]"></i>
+                  class="fa fa-truck text-5xl text-white bg-[#010412] p-4 rounded-[50%] border-8 border-[#c0c4c8]"></i>
               </div>
             </div>
             <h4>
@@ -259,7 +259,7 @@ getProductsBestseller('products/best-seller');
           <div class="service_container">
             <div class="service_outer">
               <div class="service_inner"><i
-                  class="fa fa-credit-card text-5xl text-white bg-[#FF0B34] p-4 rounded-[50%] border-8 border-[#c0c4c8]"></i>
+                  class="fa fa-credit-card text-5xl text-white bg-[#010412] p-4 rounded-[50%] border-8 border-[#c0c4c8]"></i>
               </div>
             </div>
             <h4>
@@ -275,7 +275,7 @@ getProductsBestseller('products/best-seller');
   </WelcomeItem>
 
   <WelcomeItem>
-    <footer class="bg-[#ff0b34]">
+    <footer class="bg-[#010412]">
       <div class="mx-2 sm:mx-5 md:mx-24">
         <div class=" grid grid-cols-3 gap-8 py-8">
           <div class="w-full text-white">

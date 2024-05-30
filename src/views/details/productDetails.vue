@@ -25,13 +25,13 @@ function selectSize(selectSize) {
 
 </script>
 <template>
-  <div class="m-2 sm:mx-5 md:mx-24 grid grid-cols-12">
-    <div class="col-span-5 flex space-x-2">
+  <div class="grid grid-cols-12 m-2 sm:mx-5 md:mx-24">
+    <div class="flex col-span-5 p-2 space-x-2 border border-slate-600">
       <div class="w-1/12 space-y-2">
         <img class="border border-red-500" :src="resProdcutDeteails[0].thumbnail_image" alt="">
       </div>
       <div class="w-11/12 overflow-hidden">
-        <img class=" hover:scale-150 duration-700" :src="resProdcutDeteails[0].thumbnail_image" alt="">
+        <img class="duration-700 hover:scale-150" :src="resProdcutDeteails[0].thumbnail_image" alt="">
       </div>
     </div>
     <div class="col-span-4 px-6">
@@ -64,7 +64,7 @@ function selectSize(selectSize) {
       </div>
 
       <div class="my-4">
-        <span class="border-2 px-2 py-1">
+        <span class="px-2 py-1 border-2">
           Shipping Within 2-5 Days with 100% COD
         </span>
       </div>
@@ -72,7 +72,7 @@ function selectSize(selectSize) {
       <div v-if="resProdcutDeteails[0].choice_options[0]" class="mt-8">
         <h1 class="text-lg">Select Size</h1> 
         <div class="flex flex-wrap -mb-2"> 
-          <button v-for="item in resProdcutDeteails[0].choice_options[0].options" :key="item" @click="selectSize(item)" :class="{ 'text-white': item == FormData.selectedSize ?? 'true', 'bg-[#ff0b34]': item == FormData.selectedSize ?? 'true'}" class="py-1 mb-2 mr-1 border w-11 border-[#ff0b34] hover:text-white hover:bg-[#ff0b34]">
+          <button v-for="item in resProdcutDeteails[0].choice_options[0].options" :key="item" @click="selectSize(item)" :class="{ 'text-white': item == FormData.selectedSize ?? 'true', 'bg-[#010412]': item == FormData.selectedSize ?? 'true'}" class="py-1 mb-2 mr-1 border w-11 border-[#010412] hover:text-white hover:bg-[#010412]">
             {{ item }}
           </button> 
         </div>
@@ -83,7 +83,7 @@ function selectSize(selectSize) {
         <div class="flex space-x-3">
           <button v-for="colors in resProdcutDeteails[0].colors" :key="colors" @click="selectSize(colors)" 
             class="p-1 mb-2 border border-transparent rounded-full hover:bg-black hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400 ">
-            <div class="w-6 h-6  rounded-full" :class="'bg-[red]'"></div>
+            <div class="w-6 h-6 rounded-full" :class="'bg-[red]'"></div>
           </button> 
         </div>
       </div>
@@ -92,16 +92,16 @@ function selectSize(selectSize) {
         <div class="flex flex-wrap items-center justify-between">
           <div class="mb-4 mr-4 lg:mb-0">
             <div class="w-28">
-              <div class="relative flex flex-row w-full h-10 bg-transparent border border-[#ff0b34]">
+              <div class="relative flex flex-row w-full h-10 bg-transparent border border-[#010412]">
                 <button  @click="quality >1 ? quality-- : ''"
-                  class="w-20 h-full text-gray-600 bg-gray-100 border-r  outline-none cursor-pointer hover:text-gray-200 duration-1000 hover:bg-[#ff0b34]">
+                  class="w-20 h-full text-gray-600 bg-gray-100 border-r  outline-none cursor-pointer hover:text-gray-200 duration-1000 hover:bg-[#010412]">
                   <span class="m-auto text-2xl font-thin">-</span>
                 </button>
                 <input type="number"
                   class="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-100 outline-none dark:text-gray-400 dark:placeholder-gray-400 focus:outline-none text-md hover:text-black"
                   min="1" :value="quality">
                 <button @click="quality++"
-                  class="w-20 h-full text-gray-600 bg-gray-100 border-l outline-none cursor-pointer hover:text-gray-200 duration-1000 hover:bg-[#ff0b34]">
+                  class="w-20 h-full text-gray-600 bg-gray-100 border-l outline-none cursor-pointer hover:text-gray-200 duration-1000 hover:bg-[#010412]">
                   <span class="m-auto text-2xl font-thin">+</span>
                 </button>
               </div>
@@ -111,7 +111,7 @@ function selectSize(selectSize) {
           <div class="flex">
             <div class="mb-4 mr-4 lg:mb-0">
               <button
-                class="flex items-center justify-center w-full h-10 p-2 text-gray-700 border border-[#ff0b34] duration-700 hover:bg-[#ff0b34] hover:text-white lg:w-11">
+                class="flex items-center justify-center w-full h-10 p-2 text-gray-700 border border-[#010412] duration-700 hover:bg-[#010412] hover:text-white lg:w-11">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
                   viewBox="0 0 16 16">
                   <path
@@ -122,7 +122,7 @@ function selectSize(selectSize) {
             </div>
             <div class="mb-4 lg:mb-0">
               <button
-                class="flex items-center justify-center w-full h-10 p-2 text-gray-700 border border-[#ff0b34] duration-700 hover:bg-[#ff0b34] hover:text-white lg:w-11">
+                class="flex items-center justify-center w-full h-10 p-2 text-gray-700 border border-[#010412] duration-700 hover:bg-[#010412] hover:text-white lg:w-11">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class=" bi bi-heart"
                   viewBox="0 0 16 16">
                   <path
@@ -133,8 +133,11 @@ function selectSize(selectSize) {
             </div>
           </div>
         </div>
-        <div class="mt-4 lg:mb-0 flex justify-center">
-          <router-link :to="{ name: 'order', params:{ id: resProdcutDeteails[0].id } }" class="py-2 flex justify-center w-full text-white border border-[#ff0b34] duration-700  bg-[#ff0b34] hover:bg-transparent hover:text-gray-600">
+        <div class="flex justify-center mt-4 lg:mb-0">
+          <!-- <router-link :to="{ name: 'order', params:{ id: resProdcutDeteails[0].id } }" class="py-2 flex justify-center w-full text-white border border-[#010412] duration-700  bg-[#010412] hover:bg-transparent hover:text-gray-600">
+            Order Now
+          </router-link>  -->
+          <router-link class="py-2 flex justify-center w-full text-white border border-[#010412] duration-700  bg-[#010412] hover:bg-transparent hover:text-gray-600">
             Order Now
           </router-link> 
         </div>
@@ -142,61 +145,61 @@ function selectSize(selectSize) {
 
     </div>
     <div class="col-span-3">
-      <div class="px-5 py-3 border-2 border-dotted border-red-500 leading-8 text-gray-700 text-xs">
+      <div class="px-5 py-3 text-xs leading-8 text-gray-700 border-2 border-red-500 border-dotted">
         <p> <i class="fa fa-check"></i> Order today and receive it within 02 - 03 days </p>
         <p> <i class="fa fa-check"></i> Quality Product </p>
         <p> <i class="fa fa-check"></i> Cash In Delivery Available </p>
       </div>
 
-      <div class="px-5 py-3 mt-5 border-2 border-dotted border-red-500 leading-8 text-gray-700 text-xs">
+      <div class="px-5 py-3 mt-5 text-xs leading-8 text-gray-700 border-2 border-red-500 border-dotted">
         <p> <i class="fa fa-check"></i> Have question about this product ? please call </p>
         <p> <i class="fa fa-phone"></i>01700000000</p>
       </div>
     </div>
   </div>
 
-  <div class="m-2 sm:mx-5 md:mx-24 mt-2 py-2 bg-gray-200 border border-[#ff0b34]">
-    <strong class="px-4 py-3 bg-[#ff0b34] text-white">Description</strong>
-    <strong class="px-4 py-3 hover:bg-[#ff0b34] hover:text-white duration-1000">How to order</strong>
-    <strong class="px-4 py-3 hover:bg-[#ff0b34] hover:text-white duration-1000">Return Policy</strong>
+  <div class="m-2 sm:mx-5 md:mx-24 mt-2 py-2 bg-gray-200 border border-[#010412]">
+    <strong class="px-4 py-3 bg-[#010412] text-white">Description</strong>
+    <strong class="px-4 py-3 hover:bg-[#010412] hover:text-white duration-1000">How to order</strong>
+    <strong class="px-4 py-3 hover:bg-[#010412] hover:text-white duration-1000">Return Policy</strong>
   </div>
 
-  <div class="m-2 sm:mx-5 md:mx-24 mt-8" v-html="resProdcutDeteails[0].description">
+  <div class="m-2 mt-8 sm:mx-5 md:mx-24" v-html="resProdcutDeteails[0].description">
   </div>
 
-  <div class="mx-2 sm:mx-5 md:mx-24 my-6">
-    <h1 class=" font-bold text-2xl my-2">Related Products</h1>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+  <div class="mx-2 my-6 sm:mx-5 md:mx-24">
+    <h1 class="my-2 text-2xl font-bold ">Related Products</h1>
+    <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
 
       <div v-for="item2 in resProductsPelated" :key="item2">
-        <div class="w-full max-w-sm bg-orange-50 border border-gray-200 rounded-lg shadow hover:shadow-lg duration-1000">
+        <div class="w-full max-w-sm duration-1000 border border-gray-200 rounded-lg shadow bg-orange-50 hover:shadow-lg">
 
           <router-link :to="{ name: 'details', params: { id: item2.id } }" :onclick="details">
             <div class="m-2 overflow-hidden">
-              <img class=" rounded-t-lg hover:rotate-12 hover:scale-125 duration-500" :src="item2.thumbnail_image"
+              <img class="duration-500 rounded-t-lg hover:rotate-12 hover:scale-125" :src="item2.thumbnail_image"
                 alt="product image" />
             </div>
           </router-link>
-          <div class="px-2 pb-2 w-full">
+          <div class="w-full px-2 pb-2">
             <router-link :to="{ name: 'details', params: { id: item2.id } }" :onclick="details">
-              <h5 class="font-semibold tracking-tight text-sm text-gray-900 truncate">
+              <h5 class="text-sm font-semibold tracking-tight text-gray-900 truncate">
                 {{ item2.name }}
               </h5>
             </router-link>
 
             <div class="flex items-center justify-between mb-2">
               <span class="text-sm text-gray-900">{{ item2.main_price }}</span>
-              <small class="text-red-600 text-xs line-through">{{ item2.stroked_price }}</small>
+              <small class="text-xs text-red-600 line-through">{{ item2.stroked_price }}</small>
             </div>
 
             <div class="flex w-full items-center justify-between space-x-2px]">
               <a href="#"
-                class="text-slate-900 w-5/6 hover:bg-[#ff0b34] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-5 py-1.5 text-center border border-[#ff0b34] ">
+                class="text-slate-900 w-5/6 hover:bg-[#010412] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-5 py-1.5 text-center border border-[#010412] ">
                 Order Now
               </a>
               <a href="#"
-                class="text-slate-900 w-1/6 hover:bg-[#ff0b34] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#ff0b34] ">
-                <i class="fa-regular fa-heart text-lg hover:font-bold"></i>
+                class="text-slate-900 w-1/6 hover:bg-[#010412] focus:ring-4 border-l-0 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-r-md text-sm py-0.5 text-center border border-[#010412] ">
+                <i class="text-lg fa-regular fa-heart hover:font-bold"></i>
               </a>
             </div>
 

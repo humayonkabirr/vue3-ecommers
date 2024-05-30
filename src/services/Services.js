@@ -72,7 +72,7 @@ export default function ServiceCall() {
       resData.value = [];
       let response = await axios.get(url); 
       resData.value = response.data;
-      // console.log(response.data);
+      console.log(response.data);
     } catch (e) {
       console.log(e);
       // await router.push("/error");
