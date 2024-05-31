@@ -1,6 +1,7 @@
 <script setup>
 import useAuth from "@/services/useAuth.js";
 import ServiceCall from "@/services/Services.js";
+import { reactive } from "vue";
 
 const { login } = useAuth();
 const { getSliders, resSliders, getProductsBestseller, resBestSelling, getData, resData, resCateData, getProductsFeatured, resGeteatured, getCategory} = ServiceCall();
