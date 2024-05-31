@@ -72,7 +72,31 @@ export default function ServiceCall() {
       resData.value = [];
       let response = await axios.get(url); 
       resData.value = response.data;
-      console.log(response.data);
+      // console.log(response.data);
+    } catch (e) {
+      console.log(e);
+      // await router.push("/error");
+    }
+  };
+
+  const getCart = async (FormData, url) => { 
+    try {
+      resData.value = [];
+      let response = await axios.post(url, FormData); 
+      resData.value = response.data;
+      // console.log(response.data);
+    } catch (e) {
+      console.log(e);
+      // await router.push("/error");
+    }
+  };
+
+  const getCartList = async () => { 
+    try {
+      resData.value = [];
+      let response = await axios.post('carts'); 
+      resData.value = response.data;
+      // console.log(response.data);
     } catch (e) {
       console.log(e);
       // await router.push("/error");
@@ -109,7 +133,7 @@ export default function ServiceCall() {
       resBestSelling.value = [];
       let response = await axios.get(url); 
       resBestSelling.value = response.data;
-      console.log(response.data);
+      // console.log(response.data);
       // console.log(resBestSelling);
     } catch (e) {
       console.log(e);
@@ -135,7 +159,7 @@ export default function ServiceCall() {
       resProdcutDeteails.value = [];
       let response = await axios.get("products/"+url); 
       resProdcutDeteails.value = response.data.data;
-      console.log(response.data.data);
+      // console.log(response.data.data);
       // console.log(resProdcutDeteails);
     } catch (e) {
       console.log(e);
@@ -148,7 +172,7 @@ export default function ServiceCall() {
       resProductsPelated.value = [];
       let response = await axios.get("products/related/"+url); 
       resProductsPelated.value = response.data.data;
-      console.log(response.data.data);
+      // console.log(response.data.data);
       // console.log(resProductsPelated);
     } catch (e) {
       console.log(e);
@@ -156,5 +180,5 @@ export default function ServiceCall() {
     }
   };
 
-  return { getProductsPelated, resProductsPelated, getProdcutDeteails,resProdcutDeteails, getSliders,resSliders, getProductsBestseller, resBestSelling, storeDate, getData, resData,resCateData,getProductsFeatured, resGeteatured, getCategory, status, errors };
+  return { getProductsPelated, getCartList, resProductsPelated, getProdcutDeteails,resProdcutDeteails, getSliders,resSliders, getProductsBestseller, resBestSelling, storeDate, getData, getCart, resData,resCateData,getProductsFeatured, resGeteatured, getCategory, status, errors };
 }
