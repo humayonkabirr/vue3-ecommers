@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import setAuthToken from './setAuthToken';
 
 // import trumpetSfx from "@/assets/sounds/product_add.mp3";
 // import trumpetSfx from "@/assets/sounds/1secondton_87a501f05076308.mp3";
@@ -18,6 +19,16 @@ export default function ServiceCall() {
   const resSliders = ref([]); 
   const resProdcutDeteails = ref([]); 
   const resProductsPelated = ref([]); 
+  const resCartData = ref([]); 
+
+
+   // Set token on initial load
+   const token = localStorage.getItem('token');
+   if (token) {
+     setAuthToken(token);
+  }
+  
+
 
   const storeDate = async (url, data) => {
     try {
@@ -82,9 +93,25 @@ export default function ServiceCall() {
   const getCart = async (FormData, url) => { 
     try {
       resData.value = [];
+      await axios.get('https://rahmansoutfit.com/sanctum/csrf-cookie')
       let response = await axios.post(url, FormData); 
       resData.value = response.data;
       // console.log(response.data);
+      await router.push("/check-out")
+    } catch (e) {
+      console.log(e);
+      // await router.push("/error");
+    }
+  };
+
+  const placeOrder = async (FormData, url) => { 
+    try {
+      resData.value = [];
+      await axios.get('https://rahmansoutfit.com/sanctum/csrf-cookie')
+      let response = await axios.post(url, FormData); 
+      resData.value = response.data;
+      // console.log(response.data);
+      await router.push("/")
     } catch (e) {
       console.log(e);
       // await router.push("/error");
@@ -93,10 +120,11 @@ export default function ServiceCall() {
 
   const getCartList = async () => { 
     try {
-      resData.value = [];
+      resCartData.value = [];
+      await axios.get('https://rahmansoutfit.com/sanctum/csrf-cookie')
       let response = await axios.post('carts'); 
-      resData.value = response.data;
-      // console.log(response.data);
+      resCartData.value = response.data;
+      // console.log(response.data); 
     } catch (e) {
       console.log(e);
       // await router.push("/error");
@@ -180,5 +208,5 @@ export default function ServiceCall() {
     }
   };
 
-  return { getProductsPelated, getCartList, resProductsPelated, getProdcutDeteails,resProdcutDeteails, getSliders,resSliders, getProductsBestseller, resBestSelling, storeDate, getData, getCart, resData,resCateData,getProductsFeatured, resGeteatured, getCategory, status, errors };
+  return { getProductsPelated, getCartList, placeOrder, resCartData, resProductsPelated, getProdcutDeteails,resProdcutDeteails, getSliders,resSliders, getProductsBestseller, resBestSelling, storeDate, getData, getCart, resData,resCateData,getProductsFeatured, resGeteatured, getCategory, status, errors };
 }

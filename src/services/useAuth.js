@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { computed, reactive, ref } from 'vue'
 // import router from "@/router/index";
+import setAuthToken from './setAuthToken';
 
 const state = reactive({
   authenticated: false,
@@ -38,10 +39,13 @@ export default function useAuth() {
 
   const login = async (loginInfo) => {
     try {
-      if (localStorage.getItem('user')) {
+      if (!localStorage.getItem('token')) {
         await axios.get('https://rahmansoutfit.com/sanctum/csrf-cookie')
         let response = await axios.post('/auth/login', loginInfo)
-        localStorage.setItem('user', JSON.stringify(response.data))
+        // localStorage.setItem('user', JSON.stringify(response.data))
+        const token = response.data.access_token
+        localStorage.setItem('token', token)
+        setAuthToken(token)
       }
 
       // await attempt();

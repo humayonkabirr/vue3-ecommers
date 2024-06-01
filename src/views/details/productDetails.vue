@@ -1,44 +1,64 @@
 <script setup>
-import { reactive } from "vue";
-import { useRoute, RouterLink } from "vue-router";
- 
+import { reactive, watch } from "vue";
+import { useRoute } from "vue-router";
 import ServiceCall from "@/services/Services.js";
- 
-const { getProdcutDeteails,getCartList, resProdcutDeteails, getProductsPelated, resProductsPelated, getCart } = ServiceCall();
 
-
-
-
-
+const { getProdcutDeteails, resProdcutDeteails, getProductsPelated, resProductsPelated, getCart } = ServiceCall();
 const route = useRoute();
 
+// Reactive form data object
 const FormData = reactive({
   selectedSize: null,
-  id:109,
-  variant:"",
-  user_id:8,
-  quantity:2
-
+  id: route.params.id,
+  variant: null,
+  user_id: 8,
+  quantity: 1
 });
 
-getCartList();
-getCart(FormData, "carts/add")
+// Fetch product details and related products
 getProdcutDeteails(route.params.id);
 getProductsPelated(route.params.id);
- 
-
-
-
 
 function details() {
-  getProdcutDeteails(route.params.id)
-  getProductsPelated(route.params.id)
-}
-function selectSize(selectSize) {  
-  FormData.selectedSize = selectSize;
+  getProdcutDeteails(route.params.id);
+  getProductsPelated(route.params.id);
 }
 
+// Temporary data to hold selected size and color
+const tempData = reactive({
+  size: null,
+  color: null
+});
+
+// Functions to update selected size and color
+function selectSize(size) {
+  tempData.size = size;
+  updateVariant();
+}
+
+function selectColor(color) {
+  tempData.color = color;
+  updateVariant();
+}
+
+// Watchers to update FormData.variant whenever size or color changes
+function updateVariant() {
+  if (tempData.size && tempData.color) {
+    FormData.variant = `${tempData.color}-${tempData.size}`;
+  } else if (tempData.color) {
+    FormData.variant = tempData.color;
+  } else if (tempData.size) {
+    FormData.variant = tempData.size;
+  } else {
+    FormData.variant = null;
+  }
+}
+
+// Alternatively, you can use watch to reactively update variant
+watch([() => tempData.size, () => tempData.color], updateVariant);
+
 </script>
+
 <template>
   <div class="grid grid-cols-12 m-2 sm:mx-5 md:mx-24">
     <div class="flex col-span-5 p-2 space-x-2 border border-slate-600">
@@ -50,7 +70,7 @@ function selectSize(selectSize) {
       </div>
     </div>
     <div class="col-span-4 px-6">
-     <form action="#">
+     <form  v-on:submit.prevent="getCart(FormData, 'carts/add')">
       <h1 class="text-xl">{{ resProdcutDeteails[0].name }}</h1>
       <a href="https://wa.me/+8804641546" class="flex items-center hover:text-red-400">
         <svg data-v-11f90b60="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18px" height="18px"
@@ -88,7 +108,7 @@ function selectSize(selectSize) {
       <div v-if="resProdcutDeteails[0].choice_options[0]" class="mt-8">
         <h1 class="text-lg">Select Size</h1> 
         <div class="flex flex-wrap -mb-2"> 
-          <button  type="button" v-for="item in resProdcutDeteails[0].choice_options[0].options" :key="item" @click="selectSize(item)" :class="{ 'text-white': item == FormData.selectedSize ?? 'true', 'bg-[#010412]': item == FormData.selectedSize ?? 'true'}" class="py-1 mb-2 mr-1 border w-11 border-[#010412] hover:text-white hover:bg-[#010412]">
+          <button  type="button" v-for="item in resProdcutDeteails[0].choice_options[0].options" :key="item" @click="selectSize(item)" :class="{ 'text-white': item == tempData.size ?? 'true', 'bg-[#010412]': item == tempData.size ?? 'true'}" class="py-1 mb-2 mr-1 border w-11 border-[#010412] hover:text-white hover:bg-[#010412]">
             {{ item }}
           </button> 
         </div>
@@ -97,9 +117,10 @@ function selectSize(selectSize) {
       <div v-if="resProdcutDeteails[0].colors[0]" class="mt-8">
         <h1 class="text-lg">Select Color</h1>
         <div class="flex space-x-3">
-          <button  type="button" v-for="colors in resProdcutDeteails[0].colors" :key="colors" @click="selectSize(colors)" 
-            class="p-1 mb-2 border border-transparent rounded-full hover:bg-black hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400 ">
-            <div class="w-6 h-6 rounded-full" :class="'bg-[red]'"></div>
+          <button type="button" v-for="colors in resProdcutDeteails[0].colors" :key="colors" @click="selectColor(colors)" 
+            class="p-1 mb-2 border border-transparent rounded-full hover:bg-black hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-400"
+            :class="{ 'text-white': colors == tempData.color ?? 'true', 'bg-[#010412]': colors == tempData.color ?? 'true'}">
+            <div class="w-6 h-6 bg-red-700 rounded-full"></div>
           </button> 
         </div>
       </div>
@@ -109,14 +130,14 @@ function selectSize(selectSize) {
           <div class="mb-4 mr-4 lg:mb-0">
             <div class="w-28">
               <div class="relative flex flex-row w-full h-10 bg-transparent border border-[#010412]">
-                <button type="button" @click="FormData.quality >1 ? FormData.quality-- : ''"
+                <button type="button" @click="FormData.quantity >1 ? FormData.quantity-- : ''"
                   class="w-20 h-full text-gray-600 bg-gray-100 border-r  outline-none cursor-pointer hover:text-gray-200 duration-1000 hover:bg-[#010412]">
                   <span class="m-auto text-2xl font-thin">-</span>
                 </button>
                 <input type="number"
                   class="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-100 outline-none dark:text-gray-400 dark:placeholder-gray-400 focus:outline-none text-md hover:text-black"
-                  min="1" :value="FormData.quality">
-                <button type="button" @click="FormData.quality++"
+                  min="1" :value="FormData.quantity">
+                <button type="button" @click="FormData.quantity++"
                   class="w-20 h-full text-gray-600 bg-gray-100 border-l outline-none cursor-pointer hover:text-gray-200 duration-1000 hover:bg-[#010412]">
                   <span class="m-auto text-2xl font-thin">+</span>
                 </button>
@@ -156,15 +177,13 @@ function selectSize(selectSize) {
           <button type="submit"  class="py-2 flex justify-center w-full text-white border border-[#010412] duration-700  bg-[#010412] hover:bg-transparent hover:text-gray-600">Order Now</button>
         </div>
       </div>
-     </form>
+     </form> 
      
-     <pre>{{resProdcutDeteails}}</pre>
-
     </div>
     <div class="col-span-3">
       <div class="px-5 py-3 text-xs leading-8 text-gray-700 border-2 border-red-500 border-dotted">
         <p> <i class="fa fa-check"></i> Order today and receive it within 02 - 03 days </p>
-        <p> <i class="fa fa-check"></i> Quality Product </p>
+        <p> <i class="fa fa-check"></i> quantity Product </p>
         <p> <i class="fa fa-check"></i> Cash In Delivery Available </p>
       </div>
 
