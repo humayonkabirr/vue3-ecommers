@@ -8,7 +8,6 @@ const route = useRoute();
 
 // Reactive form data object
 const FormData = reactive({
-  selectedSize: null,
   id: route.params.id,
   variant: null,
   user_id: 8,

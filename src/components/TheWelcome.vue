@@ -1,9 +1,6 @@
-<script setup>
-import useAuth from "@/services/useAuth.js";
-import ServiceCall from "@/services/Services.js";
-import { reactive } from "vue";
-
-const { registrationSubmit } = useAuth();
+<script setup> 
+import ServiceCall from "@/services/Services.js"; 
+ 
 const { getSliders, resSliders, getProductsBestseller, resBestSelling, getData, resData, resCateData, getProductsFeatured, resGeteatured, getCategory } = ServiceCall();
 
 getData('products?page=1');
@@ -11,30 +8,7 @@ getCategory('categories/featured');
 getProductsFeatured('products/featured');
 getSliders('sliders');
 getProductsBestseller('products/best-seller');
-
-
-const currentTimestamp = reactive({
-  full: Date.now(),
-  last11: Date.now() % 1e11
-}); 
-
-
-const registration = reactive({
-  name: currentTimestamp.full % 1e11,
-  email_or_phone: currentTimestamp.full % 1e11,
-  password: currentTimestamp.full % 1e11,
-  password_confirmation: currentTimestamp.full % 1e11,
-  register_by: "phone"
-});
-
-registrationSubmit(registration);
-
-// const loginData = reactive({
-//   "email": "customer@example.com",
-//   "password": "123456"
-// });
-
-// login(loginData);
+  
 
 </script>
 

@@ -201,7 +201,7 @@ export default function ServiceCall() {
       let response = await axios.get("products/related/"+url); 
       resProductsPelated.value = response.data.data;
       // console.log(response.data.data);
-      // console.log(resProductsPelated);
+
     } catch (e) {
       console.log(e);
       // await router.push("/error");
