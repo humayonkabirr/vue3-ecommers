@@ -3,8 +3,8 @@ import useAuth from "@/services/useAuth.js";
 import ServiceCall from "@/services/Services.js";
 import { reactive } from "vue";
 
-const { login } = useAuth();
-const { getSliders, resSliders, getProductsBestseller, resBestSelling, getData, resData, resCateData, getProductsFeatured, resGeteatured, getCategory} = ServiceCall();
+const { registrationSubmit } = useAuth();
+const { getSliders, resSliders, getProductsBestseller, resBestSelling, getData, resData, resCateData, getProductsFeatured, resGeteatured, getCategory } = ServiceCall();
 
 getData('products?page=1');
 getCategory('categories/featured');
@@ -12,12 +12,29 @@ getProductsFeatured('products/featured');
 getSliders('sliders');
 getProductsBestseller('products/best-seller');
 
-const loginData = reactive({
-  "email": "customer@example.com",
-	"password": "123456"
+
+const currentTimestamp = reactive({
+  full: Date.now(),
+  last11: Date.now() % 1e11
+}); 
+
+
+const registration = reactive({
+  name: currentTimestamp.full % 1e11,
+  email_or_phone: currentTimestamp.full % 1e11,
+  password: currentTimestamp.full % 1e11,
+  password_confirmation: currentTimestamp.full % 1e11,
+  register_by: "phone"
 });
 
-login(loginData);
+registrationSubmit(registration);
+
+// const loginData = reactive({
+//   "email": "customer@example.com",
+//   "password": "123456"
+// });
+
+// login(loginData);
 
 </script>
 
@@ -73,25 +90,26 @@ login(loginData);
 
           <div class="w-full item" v-for="newArrival in 6" :key="newArrival.name">
             <div class="w-full border border-gray-200 rounded-lg shadow bg-orange-50 hover:shadow-xl">
-               <router-link :to="`details/5`">
+              <router-link :to="`details/5`">
                 <div class="m-2 overflow-hidden">
-                  <img class="duration-500 rounded-t-lg hover:rotate-12 hover:scale-125"
-                    src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg" alt="product image" />
+                  <img class="duration-500 rounded-t-lg hover:rotate-12 hover:scale-125 h-52"
+                    src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg"
+                    alt="product image" />
                 </div>
-               </router-link>
+              </router-link>
               <div class="w-full px-2 pb-2">
-                 <router-link :to="`details/5`">
+                <router-link :to="`details/5`">
                   <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
                     {{ newArrival.name }}
                   </h5>
-                 </router-link>
+                </router-link>
 
                 <div class="flex items-center justify-between mb-2">
                   <span class="text-sm text-gray-900">BDT 599</span>
                   <small class="text-xs text-red-600 line-through">BDT 599</small>
                 </div>
 
-                <div class="flex w-full items-center justify-between space-x-2px]">
+                <div class="flex w-full items-center justify-between">
                   <a href="#"
                     class="text-slate-900 w-5/6 hover:bg-[#010412] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-2 py-1.5 text-center border border-[#010412] ">
                     Order Now
@@ -122,12 +140,13 @@ login(loginData);
 
           <div v-for="bestSell in 2" :key="bestSell"
             class="border border-gray-200 rounded-lg shadow bg-orange-50 hover:shadow-xl">
-             <router-link :to="`details/6`">
+            <router-link :to="`details/6`">
               <div class="m-2 overflow-hidden">
-                <img class="duration-500 rounded-t-lg hover:rotate-12 hover:scale-125" src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg"
+                <img class="duration-500 rounded-t-lg hover:rotate-12 hover:scale-125  h-52"
+                  src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg"
                   alt="product image" />
               </div>
-             </router-link>
+            </router-link>
             <div class="px-2 pb-2">
               <router-link :to="`details/6`">
                 <h5 class="font-semibold tracking-tight text-[10px] md:text-sm text-gray-900 truncate">
@@ -140,7 +159,7 @@ login(loginData);
                 <small class="text-xs text-red-600 line-through">BDT 599</small>
               </div>
 
-              <div class="flex w-full items-center justify-between space-x-2px]">
+              <div class="flex w-full items-center justify-between">
                 <a href="#"
                   class="text-slate-900 w-5/6 hover:bg-[#010412] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-2 py-1.5 text-center border border-[#010412] ">
                   Order Now
@@ -157,7 +176,7 @@ login(loginData);
 
         </div>
       </div>
-      
+
     </div>
   </WelcomeItem>
 
@@ -174,8 +193,8 @@ login(loginData);
 
               <router-link :to="`details/${item2.id}`">
                 <div class="m-2 overflow-hidden">
-                  <img class="duration-500 rounded-t-lg hover:rotate-12 hover:scale-125" :src="item2.thumbnail_image"
-                    alt="product image" />
+                  <img class="duration-500 rounded-t-lg hover:rotate-12 hover:scale-125 h-52"
+                    :src="item2.thumbnail_image" alt="product image" />
                 </div>
               </router-link>
               <div class="w-full px-2 pb-2">
@@ -190,7 +209,7 @@ login(loginData);
                   <small class="text-xs text-red-600 line-through">{{ item2.stroked_price }}</small>
                 </div>
 
-                <div class="flex w-full items-center justify-between space-x-2px]">
+                <div class="flex w-full items-center justify-between">
                   <a href="#"
                     class="text-slate-900 w-5/6 hover:bg-[#010412] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-5 py-1.5 text-center border border-[#010412] ">
                     Order Now
@@ -287,31 +306,30 @@ login(loginData);
       <div class="mx-2 sm:mx-5 md:mx-24">
         <div class="grid grid-cols-3 gap-8 py-8 ">
           <div class="w-full text-white">
-            <img
-              src="https://rahmansoutfit.com/admin/public/uploads/all/5hSpb8HKcK3lZ0BhNFloERDAeeUceUL0Lr5UqKrv.png"
+            <img src="https://rahmansoutfit.com/admin/public/uploads/all/5hSpb8HKcK3lZ0BhNFloERDAeeUceUL0Lr5UqKrv.png"
               alt="">
-            
+
           </div>
           <div class="flex justify-between w-full space-x-8 text-white">
             <div>
               <h1 class="text-2xl">Quick Links</h1>
 
-               <router-link to="/">About Us</router-link><br>
-               <router-link to="/">Contact Us</router-link><br>
+              <router-link to="/">About Us</router-link><br>
+              <router-link to="/">Contact Us</router-link><br>
             </div>
             <div>
               <h1 class="text-2xl">Information</h1>
 
               <div class="">
                 <router-link to="/">How to order</router-link> <br>
-               <router-link to="/">Return Policy</router-link><br>
-               <router-link to="/">Shipment</router-link><br>
+                <router-link to="/">Return Policy</router-link><br>
+                <router-link to="/">Shipment</router-link><br>
               </div>
             </div>
           </div>
           <div class="w-full text-white">
             <h1 class="text-2xl text-black">Follow Us</h1>
-             
+
           </div>
 
 
@@ -364,4 +382,5 @@ login(loginData);
 .carousel-focus:hover {
   transition: all 0.8s;
   transform: scale(1.1);
-}</style>
+}
+</style>

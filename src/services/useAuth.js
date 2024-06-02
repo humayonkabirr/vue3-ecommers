@@ -65,6 +65,34 @@ export default function useAuth() {
     }
   }
 
+  const registrationSubmit = async (data) => {
+    try {
+      if (!localStorage.getItem('token')) {
+        await axios.get('https://rahmansoutfit.com/sanctum/csrf-cookie')
+        let response = await axios.post('/auth/signup', data)
+        // localStorage.setItem('user', JSON.stringify(response.data))
+        const token = response.data.access_token
+        localStorage.setItem('token', token)
+        setAuthToken(token)
+      }
+
+      // await attempt();
+      // await router.push("/");
+    } catch (error) {
+      console.error('Login failed:', error)
+      setAuthenticated(false)
+      setUser(null)
+      localStorage.removeItem('user')
+      // Handle specific errors
+      if (error.response && error.response.status === 422) {
+        errors.value = error.response.data.errors
+        logName.value = 'Sign In'
+      } else if (error.response && error.response.status === 429) {
+        errors.value = error.response.statusText
+      }
+    }
+  }
+
   // const logout = async () => {
   //   try {
   //     await axios.post("/logout");
@@ -79,6 +107,7 @@ export default function useAuth() {
 
   return {
     login,
+    registrationSubmit,
     permissions,
     getUser,
     getAuthenticated,
