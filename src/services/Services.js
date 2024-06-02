@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import axios from "axios";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
@@ -125,6 +126,7 @@ export default function ServiceCall() {
       let response = await axios.post('carts'); 
       resCartData.value = response.data;
       // console.log(response.data); 
+      toastr.success('add to cart');
     } catch (e) {
       console.log(e);
       // await router.push("/error");

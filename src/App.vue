@@ -1,24 +1,9 @@
-<script setup>
-import { reactive } from 'vue';
-import useAuth from "@/services/useAuth.js";
+<script setup>  
 import { RouterLink, RouterView } from 'vue-router';
+import useAuth from "@/services/useAuth.js";
 const { registrationSubmit } = useAuth();
-
-const currentTimestamp = reactive({
-  full: Date.now(),
-  last11: Date.now() % 1e11
-}); 
-
-
-const registration = reactive({
-  name: currentTimestamp.full % 1e11,
-  email_or_phone: currentTimestamp.full % 1e11,
-  password: currentTimestamp.full % 1e11,
-  password_confirmation: currentTimestamp.full % 1e11,
-  register_by: "phone"
-});
-
-registrationSubmit(registration);
+registrationSubmit();
+toastr.success('Welcome to visit');
 </script>
 
  

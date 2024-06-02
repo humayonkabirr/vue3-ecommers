@@ -46,6 +46,8 @@ export default function useAuth() {
         const token = response.data.access_token
         localStorage.setItem('token', token)
         setAuthToken(token)
+        // eslint-disable-next-line no-undef
+        toastr.success('Welcome to visit');
       }
 
       // await attempt();
@@ -65,15 +67,30 @@ export default function useAuth() {
     }
   }
 
-  const registrationSubmit = async (data) => {
+  const registrationSubmit = async () => {
     try {
       if (!localStorage.getItem('token')) {
+
+        const currentTimestamp = reactive({
+          full: Date.now(),
+          last11: Date.now() % 1e11
+        }); 
+        
+        
+        const registration = reactive({
+          name: currentTimestamp.full % 1e11,
+          email_or_phone: currentTimestamp.full % 1e11,
+          password: currentTimestamp.full % 1e11,
+          password_confirmation: currentTimestamp.full % 1e11,
+          register_by: "phone"
+        });
+        
         await axios.get('https://rahmansoutfit.com/sanctum/csrf-cookie')
-        let response = await axios.post('/auth/signup', data)
+        let response = await axios.post('/auth/signup', registration)
         // localStorage.setItem('user', JSON.stringify(response.data))
         const token = response.data.access_token
         localStorage.setItem('token', token)
-        setAuthToken(token)
+        setAuthToken(token);
       }
 
       // await attempt();
