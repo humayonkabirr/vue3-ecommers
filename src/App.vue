@@ -3,7 +3,14 @@ import { RouterLink, RouterView } from 'vue-router';
 import useAuth from "@/services/useAuth.js";
 const { registrationSubmit } = useAuth();
 registrationSubmit();
-toastr.success('Welcome to visit');
+
+import ServiceCall from "@/services/Services.js"; 
+ 
+const { resCateData, getCategory } = ServiceCall();
+ 
+getCategory('categories/featured');
+
+// toastr.success('Welcome to visit');
 </script>
 
  
@@ -45,12 +52,7 @@ toastr.success('Welcome to visit');
         </router-link>
 
         <div class="flex-1 hidden space-x-3 md:flex lg:ml-8">
-          <a href="#"
-            class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">Electronics</a>
-          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">Fashion</a>
-          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">Tools</a>
-          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">Books</a>
-          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">More</a>
+          <a href="#" v-for="category, index in resCateData.data" :key="index" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">{{ category.name }}</a>
         </div>
 
         <div class="flex items-center space-x-4">
