@@ -47,7 +47,7 @@ getProductsBestseller('products/best-seller');
         <div v-for="item in resCateData.data" :key="item"
           class="carousel-focus flex items-center flex-col relative bg-white mx-1 my-10 p-2 border border-red-600 rounded-lg shadow-lg w-[200px]">
           <img class="rounded-xl" :src="item.banner" alt="Img">
-          <h1 class="mt-1">Shirt {{ item.name }}</h1>
+          <h1 class="mt-1">{{ item.name }}</h1>
         </div>
 
       </div>
@@ -83,7 +83,7 @@ getProductsBestseller('products/best-seller');
                   <small class="text-xs text-red-600 line-through">BDT 599</small>
                 </div>
 
-                <div class="flex w-full items-center justify-between">
+                <div class="flex items-center justify-between w-full">
                   <a href="#"
                     class="text-slate-900 w-5/6 hover:bg-[#010412] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-2 py-1.5 text-center border border-[#010412] ">
                     Order Now
@@ -116,7 +116,7 @@ getProductsBestseller('products/best-seller');
             class="border border-gray-200 rounded-lg shadow bg-orange-50 hover:shadow-xl">
             <router-link :to="`details/6`">
               <div class="m-2 overflow-hidden">
-                <img class="duration-500 rounded-t-lg hover:rotate-12 hover:scale-125  h-52"
+                <img class="duration-500 rounded-t-lg hover:rotate-12 hover:scale-125 h-52"
                   src="https://rahmansoutfit.com/admin/public/uploads/all/IyZrIto7yYh33pCFOEqdHc489nWU0If1mjD724J9.jpg"
                   alt="product image" />
               </div>
@@ -133,7 +133,7 @@ getProductsBestseller('products/best-seller');
                 <small class="text-xs text-red-600 line-through">BDT 599</small>
               </div>
 
-              <div class="flex w-full items-center justify-between">
+              <div class="flex items-center justify-between w-full">
                 <a href="#"
                   class="text-slate-900 w-5/6 hover:bg-[#010412] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-2 py-1.5 text-center border border-[#010412] ">
                   Order Now
@@ -183,7 +183,7 @@ getProductsBestseller('products/best-seller');
                   <small class="text-xs text-red-600 line-through">{{ item2.stroked_price }}</small>
                 </div>
 
-                <div class="flex w-full items-center justify-between">
+                <div class="flex items-center justify-between w-full">
                   <a href="#"
                     class="text-slate-900 w-5/6 hover:bg-[#010412] focus:ring-4 hover:text-white duration-700 focus:outline focus:ring-blue-300 font-semibold rounded-l-md text-sm px-5 py-1.5 text-center border border-[#010412] ">
                     Order Now

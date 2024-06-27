@@ -3,12 +3,8 @@ import { RouterLink, RouterView } from 'vue-router';
 import ServiceCall from "@/services/Services.js"; 
 import useAuth from "@/services/useAuth.js";
 const { registrationSubmit } = useAuth();
-
-const {  resCateData, getCategory } = ServiceCall();
- 
-getCategory('categories/featured');
-
-registrationSubmit(); 
+registrationSubmit();
+toastr.success('Welcome to visit');
 </script>
 
  
@@ -49,8 +45,13 @@ registrationSubmit();
             src="https://rahmansoutfit.com/admin/public/uploads/all/5hSpb8HKcK3lZ0BhNFloERDAeeUceUL0Lr5UqKrv.png" alt="">
         </router-link>
 
-        <div class="flex-1 hidden space-x-3 md:flex lg:ml-8"> 
-          <a v-for="item in resCateData.data" :key="item" href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">{{ item.name }}</a> 
+        <div class="flex-1 hidden space-x-3 md:flex lg:ml-8">
+          <a href="#"
+            class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">Electronics</a>
+          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">Fashion</a>
+          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">Tools</a>
+          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">Books</a>
+          <a href="#" class="px-2 py-2 text-gray-200 duration-100 hover:text-gray-400 hover:border-b hover-3">More</a>
         </div>
 
         <div class="flex items-center space-x-4">
