@@ -3,6 +3,10 @@ import { computed, reactive, ref } from 'vue'
 // import router from "@/router/index";
 import setAuthToken from './setAuthToken';
 
+
+// import { toast } from 'vue3-toastify';
+// import 'vue3-toastify/dist/index.css';
+
 const state = reactive({
   authenticated: false,
   user: null
@@ -46,8 +50,10 @@ export default function useAuth() {
         const token = response.data.access_token
         localStorage.setItem('token', token)
         setAuthToken(token)
-        // eslint-disable-next-line no-undef
-        toastr.success('Welcome to visit');
+        // eslint-disable-next-line no-undef 
+        // toast.success("Welcome to visit", {
+        //   autoClose: 1000,
+        // });
       }
 
       // await attempt();

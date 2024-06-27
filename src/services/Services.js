@@ -4,6 +4,9 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import setAuthToken from './setAuthToken';
 
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
+
 // import trumpetSfx from "@/assets/sounds/product_add.mp3";
 // import trumpetSfx from "@/assets/sounds/1secondton_87a501f05076308.mp3";
 
@@ -125,8 +128,11 @@ export default function ServiceCall() {
       await axios.get('https://rahmansoutfit.com/sanctum/csrf-cookie')
       let response = await axios.post('carts'); 
       resCartData.value = response.data;
-      // console.log(response.data); 
-      toastr.success('add to cart');
+      // console.log(response.data);
+      // toastr.success('add to cart');
+      toast("add to cart", {
+        autoClose: 1000,
+      });
     } catch (e) {
       console.log(e);
       // await router.push("/error");
